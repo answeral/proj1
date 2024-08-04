@@ -4,10 +4,10 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class MainScreenApplication {
+public class HappyPawPetApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(MainScreenApplication.class, args);
+		SpringApplication.run(HappyPawPetApplication.class, args);
 	}
 
 }
