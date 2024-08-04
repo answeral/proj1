@@ -29,8 +29,10 @@ body, ul, li {
 }
 
 body {
-  background-color: #ffffff;
+    background-color: #FAF7F0; /* White background */
+    color: #000000; /* Black text */
 }
+
 
 a {
   color: inherit;		/* 부모 엘리먼트의 값을 물려받는다 */
