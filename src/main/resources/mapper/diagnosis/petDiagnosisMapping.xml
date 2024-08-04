@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.java.dao.PetDiagnosisDao">
+	<!-- 진단 설문지 작성저장 -->
+	<insert id="insertPetDagnosisDB">
+		insert into petdiagnosis values
+		( diag_seq.nextval, #{name}, #{birth}, EXTRACT(year from sysdate)-EXTRACT(year from #{birth}), #{sex}, #{surgery}, #{weight}, ${breed}, #{condition}, #{file}, sysdate,
+		#{eye1},#{eye2},#{eye3},#{eye4},#{eye5},#{eyecolor},#{skin1},#{skin2},#{skin3},#{skin4},#{skin5})
+	</insert>
+
+</mapper>
