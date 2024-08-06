@@ -63,26 +63,28 @@
         <c:forEach items="${animalList}" var="animal" varStatus="status">
             <c:if test="${fn:contains(animal.kindCd, '개')}">
                 <div class="card ${status.index % 5 == 0 ? 'start-row' : ''}">
-                    <div class="card-content">
-                        <div class="card-image-container">
-                            <img src="${animal.popfile}" alt="${fn:replace(animal.kindCd, '[개]', '')}">
+                    <a href="/adoption/Adog_ex.jsp">
+                        <div class="card-content">
+                            <div class="card-image-container">
+                                <img src="${animal.popfile}" alt="${fn:replace(animal.kindCd, '[개]', '')}">
+                            </div>
+                            <div class="card-info">
+                                <h2>
+                                    <c:choose>
+                                        <c:when test="${fn:contains(animal.kindCd, '믹스견')}">
+                                            별동이★
+                                        </c:when>
+                                        <c:otherwise>
+                                            ${fn:replace(animal.kindCd, '[개]', '')}
+                                        </c:otherwise>
+                                    </c:choose>
+                                </h2>
+                                <p class="important-info">${animal.colorCd} / ${animal.age} / ${animal.weight} kg</p>
+                                <p>성별: ${animal.sexCd} / 중성화: ${animal.neuterYn}</p>
+                                <p class="contact-info">${animal.careNm} / ${animal.careTel}</p>
+                            </div>
                         </div>
-                        <div class="card-info">
-                            <h2>
-                                <c:choose>
-                                    <c:when test="${fn:contains(animal.kindCd, '믹스견')}">
-                                        별동이★
-                                    </c:when>
-                                    <c:otherwise>
-                                        ${fn:replace(animal.kindCd, '[개]', '')}
-                                    </c:otherwise>
-                                </c:choose>
-                            </h2>
-                            <p class="important-info">${animal.colorCd} / ${animal.age} / ${animal.weight} kg</p>
-                            <p>성별: ${animal.sexCd} / 중성화: ${animal.neuterYn}</p>
-                            <p class="contact-info">${animal.careNm} / ${animal.careTel}</p>
-                        </div>
-                    </div>
+                    </a>
                 </div>
             </c:if>
         </c:forEach>

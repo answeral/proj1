@@ -14,9 +14,9 @@ header{ position: fixed; left:0; top:0; z-index: 100; width: 100%; height: 100px
 nav{width: 95%; height: 90px; margin:5px 15px 15px 0px; display: flex; }
 
 #logo {width: 400px; margin-left: 30px; box-sizing: border-box;}
-   
-#logo a{ padding-left:20px ; color: white; 
-		font-size: 35px; font-family: Roboto; font-weight: 800; 
+
+#logo a{ padding-left:20px ; color: white;
+		font-size: 35px; font-family: Roboto; font-weight: 800;
 		line-height:80px; display: inline-block;}
 
 #logoImg { position: fixed; top: 18px; z-index: 300; display: inline-block;
@@ -44,13 +44,15 @@ nav{width: 95%; height: 90px; margin:5px 15px 15px 0px; display: flex; }
 
 .submenu {
 	position: relative; top: 33px;
-	width: 110px; height: 110px; background-color: rgba(0,0,0,0.5); 
+	width: 110px; height: 110px; background-color: rgba(0,0,0,0.5);
 	display: block;
+	transition-delay: 1s; /* 1초 동안 유지 */
 }
 .submenuA {
 	position: relative; top: 33px;
-	width: 110px; height: 110px; background-color: rgba(0,0,0,0.5); 
+	width: 110px; height: 110px; background-color: rgba(0,0,0,0.5);
 	display: block;
+	transition-delay: 1s; /* 1초 동안 유지 */
 }
 
 .submenu > li {
