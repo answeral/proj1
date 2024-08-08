@@ -31,7 +31,7 @@ footer {
     align-items: left;
 }
 
-img {
+#logo img {
     width: 290px;
     height: auto;
     padding-right: 200px;
@@ -67,7 +67,7 @@ img {
 }
 
 #sub_text {
-    margin-top: 10px;
+	margin-top: 10px;
     font-size: 15px;
     line-height: 1.6;
     align-items: left;
@@ -97,7 +97,7 @@ img {
 #privacy_pop, #terms_pop{
     width:500px; height:650px; padding:40px; text-align: center;
     border-radius: 8px;
-    box-shadow: 0 2px 3px 0 rgba(34,36,38,0.15);
+    box-shadow: 0 2px 3px 0 rgba(34,36,38,0.15); 
 }
 
 h2 {
@@ -128,7 +128,7 @@ h2 {
 }
 
 /* 텍스트 영역 스타일 */
-textarea {
+#textarea {
     width: 400px;
     height: 425px;
     border: 1px solid #ccc;

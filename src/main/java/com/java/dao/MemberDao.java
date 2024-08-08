@@ -47,4 +47,7 @@ public interface MemberDao {
 
 	//회원정보 수정을 위한 pw 조회
 	MemberDto checkPw(MemberDto mdto);
+	
+	//비밀번호 변경 저장
+	void doChangePw(String id, String newPw2);
 }

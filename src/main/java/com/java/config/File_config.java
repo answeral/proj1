@@ -9,8 +9,8 @@ public class File_config implements WebMvcConfigurer {
 
 	public void addResourceHandlers(ResourceHandlerRegistry registry) {
 		registry.addResourceHandler("/upload/**")
-//		.addResourceLocations("file:///c:/upload/");
-		.addResourceLocations("/Users/igyuwon/upload/");
+		.addResourceLocations("file:///c:/upload/");
+//		.addResourceLocations("/Users/igyuwon/upload/");
 
 		
 	}

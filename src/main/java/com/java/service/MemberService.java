@@ -41,4 +41,10 @@ public interface MemberService {
 	//회원정보 수정을 위한 pw 조회
 	boolean checkPw(MemberDto mdto, String check_pw);
 
+	//비밀번호 변경을 위한 pw 조회
+	boolean changePw(MemberDto mdto, String old_pw);
+
+	//비밀번호 변경 저장
+	void doChangePw(String id, String newPw2);
+
 }
