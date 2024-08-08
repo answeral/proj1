@@ -9,6 +9,7 @@ import java.util.Date;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestPart;
 import org.springframework.web.multipart.MultipartFile;
@@ -149,7 +150,33 @@ public class PController {
 		return "redirect:/mypage/myPage";
 	}
 
-	//---------------------------------------------------------------------------------
+	//회원정보 수정---------------------------------------------------------------------------------
+	
+	@GetMapping("/mypage/checkPw")
+	public String checkPw() {
+		return "mypage/checkPw";
+	}
+	
+	@RequestMapping("/mypage/checkPw") //회원정보 수정을 위한 pw 조회
+	public String checkPw(MemberDto mdto, String check_pw, String newPw1, String newPw2, RedirectAttributes rA) {
+		String id = (String)session.getAttribute("sessionId");
+		//기존 비밀번호 조회
+		mdto.setId(id);
+
+		boolean checkPw = memberService.checkPw(mdto, check_pw);
+		String url = "";
+
+		//비밀번 호 비교
+		if(checkPw) {
+			//비밀번호 일치 시 pEdit로 이동
+			url =  "redirect:/mypage/pEdit";
+		}else {
+			//비밀번호 불일치 시
+			rA.addFlashAttribute("errorM", "비밀번호를 다시 확인해주세요.");
+			url =  "redirect:/mypage/checkPw";
+		}
+		return url;
+	}
 	
 	@GetMapping("/mypage/pEdit")  // 회원 정보 조회
 	public ModelAndView pEdit() {
@@ -179,8 +206,38 @@ public class PController {
 		return "redirect:/mypage/myPage";
 	}
 	
+	//비밀번호 변경---------------------------------------------------------------------------------------
+	
+	@GetMapping("/mypage/changePw")
+	public String changePw() {
+		return "mypage/changePw";
+	}
+	
+	@PostMapping("/mypage/changePw") //비밀번호 변경을 위한 pw 조회 후 변경 저장
+	public String changePw(MemberDto mdto, String old_pw, String newPw2, RedirectAttributes rA) {
+		String id = (String)session.getAttribute("sessionId");
+		//기존 비밀번호 조회
+		mdto.setId(id);
+
+		boolean changePw = memberService.changePw(mdto, old_pw);
+		String url = "";
+
+		//비밀번호 비교
+		if(changePw) {
+			//비밀번호 일치 시 myPage로 이동
+			memberService.doChangePw(id, newPw2);
+			rA.addFlashAttribute("successM", "비밀번호가 정상적으로 변경되었습니다.");
+			url =  "redirect:/mypage/myPage";
+		}else {
+			//비밀번호 불일치 시
+			rA.addFlashAttribute("errorM", "비밀번호를 다시 확인해주세요.");
+			url =  "redirect:/mypage/changePw";
+		}
+		return url;
+	}
 	
 	//---------------------------------------------------------------------------------------
+	
 	@GetMapping("/mypage/byeMem")
 	public String byeMem() {
 		return "mypage/byeMem";
@@ -201,29 +258,5 @@ public class PController {
 		return "redirect:/"; //메인페이지로 이동
 	}
 
-	@GetMapping("/mypage/checkPw")
-	public String checkPw() {
-		return "mypage/checkPw";
-	}
-
-	@RequestMapping("/mypage/checkPw") //회원정보 수정을 위한 pw 조회
-	public String checkPw(MemberDto mdto, String check_pw, RedirectAttributes rA) {
-		String id = (String)session.getAttribute("sessionId");
-		//기존 비밀번호 조회
-		mdto.setId(id);
-
-		boolean checkPw = memberService.checkPw(mdto, check_pw);
-		String url = "";
-
-		//비밀번 호 비교
-		if(checkPw) {
-			//비밀번호 일치 시 pEdit로 이동
-			url =  "redirect:/mypage/pEdit";
-		}else {
-			//비밀번호 불일치 시
-			rA.addFlashAttribute("errorM", "비밀번호를 다시 확인해주세요.");
-			url =  "redirect:/mypage/checkPw";
-		}
-		return url;
-	}
+	
 }

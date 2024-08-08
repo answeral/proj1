@@ -1,6 +1,6 @@
 #mypage{ margin: 0; padding: 0;}
 section{
-    width: 100%; min-height: 1500px; background-color: #FAF7F0;
+    width: 100%; min-height: 1000px; background-color: #FAF7F0;
 }
 /* 서브 이미지 */
 #blank1{width: 100%; height: 100px;}
@@ -61,6 +61,22 @@ section{
     text-align: center;
 }
 .infoB {
+    width: 215px;
+    height: 45px;
+    background: black;
+    color: white;
+	display: inline-block;
+    position: relative;
+    margin: 10px auto;
+    font-size: 20px;
+    font-weight: 650;
+	border-radius: 8px;
+    text-align: center;
+    padding-top: 7px;
+    box-sizing: border-box;
+    letter-spacing: 1px;
+}
+.infoC {
     width: 430px;
     height: 45px;
     background: black;
@@ -74,8 +90,10 @@ section{
     text-align: center;
     padding-top: 7px;
     box-sizing: border-box;
+    letter-spacing: 1px;
 }
-#pEdit_button{
+
+#checkPW_button, #changePw_button{
 	top:20px;
 }
 table {
@@ -187,7 +205,7 @@ th {
     position: relative;
     top: 50px;
 }
-#modal_image img {
+#modal_image > img {
     position: relative;
     width: 380px;
     height: 380px;
@@ -196,7 +214,9 @@ th {
 }
 #modal_select{
     position: relative;
-    top: 70px;}
+    top: 70px;
+}
+    
 #modal_select input{
 	position: relative;
 	width: 190px;
@@ -214,17 +234,3 @@ th {
 	font-size: 15px; font-weight: 550;
 	border-radius: 5%; top:40px;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-

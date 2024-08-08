@@ -11,6 +11,11 @@
 	<script src="http://code.jquery.com/jquery-latest.min.js"></script>
 <title>MY PAGE</title>
 <script>
+	console.log("successM : ${successM}");
+	if("${successM}" != ""){
+		   alert("${successM}"); 
+	   }
+	
     function pdBtn(pno,pname){
     	if(confirm("정보를 삭제하시겠습니까?")){
     		alert(pname+"의 정보가 삭제되었습니다.");
@@ -97,9 +102,10 @@
                 <div id="info">
                         <div class="hello">${sessionName } 님 안녕하세요! &ensp;</div></a>
                     <div id="blank2"></div>
-                        <a href="/mypage/pEdit"><div class="infoB" id="pEdit_button">회원정보수정</div></a>
+                        <a href="/mypage/checkPw"><div class="infoB" id="checkPW_button">회원정보 수정</div></a>
+                        <a href="/mypage/changePw"><div class="infoB" id="changePw_button">비밀번호 변경</div></a>
                     <div id="blank2"></div>
-                        <div class="infoB">${sessionName } 님의 반려동물 정보</div>
+                        <div class="infoC">${sessionName } 님의 반려동물 정보</div>
                         <div class="petlist">
 							<h4>반려동물정보관리 (총 ${plist.size()} 마리)</h4>
 							<c:forEach items="${plist }" var="pDto">

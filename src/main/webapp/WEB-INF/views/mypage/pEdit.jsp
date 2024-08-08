@@ -28,43 +28,6 @@
 			});//이메일 클릭
 			
 		});
-		// onclick형식, 비밀번호 생성
-		function newPw(){
-			var pw = $("#pw1").val();
-			var hasLetter = /[a-zA-Z]/.test(pw);
-			var hasNumber = /[0-9]/.test(pw);
-			var specialChar = /[!@#$%^&*+?]/.test(pw);
-			
-			var cnt = 0;
-			if (hasLetter) cnt++; //문자가 포함되면 ++
-			if (hasNumber) cnt++; //숫자가 포함되면 ++
-			if (specialChar) cnt++; //특수문자가 포함되면 ++
-				
-			if (cnt == 2){
-				if(pw.length >= 10){
-					$("#NewPw").css("display","inline-block");
-				}else{
-					$("#NewPw").css("display","none");
-				}
-			}else if(cnt == 3){
-				if(pw.length >= 8){
-					$("#NewPw").css("display","inline-block");
-				}else{
-					$("#NewPw").css("display","none");
-				}
-			}else{
-					$("#NewPw").css("display","none");
-			}
-			
-		}
-		//비밀번호 확인
-		function pwCheck(){
-			if($("#pw1").val() == $("#pw2").val()){
-				$("#pwConfirm").text('비밀번호가 일치합니다.').css('color','blue');
-			}else{
-				$("#pwConfirm").text('비밀번호가 일치하지 않습니다.').css('color','red');
-			}
-		}
 		//전화번호 숫자만 가능!
 		   $(function(){
 			  $("#f_tell").keyup(function(){
@@ -106,6 +69,7 @@
 					return false;
 				}else{
 					memFrm.submit();
+					alert("정보가 수정되었습니다.")
 				}
 			});
 		});
@@ -118,7 +82,7 @@
 		<div class="subbanner"></div>
 		<div class="main">
 			<h2>회원 정보 수정</h2>
-			<form action="/mypage/doUpdateMem" name="memFrm" method="post">
+			<form action="/mypage/doUpdateMem" name="memFrm" id="memForm" method="post">
 				<input type="hidden" id="email" name="email">
 				<input type="hidden" id="phone" name="phone">
 				<h4>
@@ -141,33 +105,6 @@
 						</dt>
 						<dd>
 							<input type="text" id="id" name="id" minlength="4" maxlength="16" value="${mdto.id }" disabled />
-						</dd>
-					</dl>
-					<dl id="pwF">
-						<dt>
-							<div></div>
-							<label for="pw1">비밀번호</label>
-						</dt>
-						<dd>
-							<input type="password" id="pw1" name="pw1" minlength="8" value="${mdto.pw }"
-								oninput="newPw()" placeholder="비밀번호 입력" required />
-							<div id="NewPw">
-								<i class="fa-solid fa-check" style="color: #226853;"></i>&ensp;사용
-								가능한 비밀번호입니다.
-							</div>
-							<span>영문, 숫자, 특수문자(!@#$%^&*+?) 중 2종류 조합 시 10자리 이상 입력</span> <span>영문,
-								숫자, 특수문자(!@#$%^&*+?) 모두 조합 시 8자리 이상 입력</span>
-						</dd>
-					</dl>
-					<dl id="pw">
-						<dt>
-							<div></div>
-							<label for="pw2">비밀번호 확인</label>
-						</dt>
-						<dd>
-							<input type="password" id="pw2" name="pw" minlength="8"
-								oninput="pwCheck()" placeholder="비밀번호 확인" required /> <span
-								id="pwConfirm">비밀번호를 확인하세요.</span>
 						</dd>
 					</dl>
 					<dl id="email">
