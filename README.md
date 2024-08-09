@@ -9,7 +9,7 @@
 |담당자|담당 내용|
 |:---|:---|
 |이규원|Git & 프로젝트 세팅, ERD 설계, 전체 API 구현, 인공지능 구현|
-|유인하|ERD 설계, 전체 API 구현|
+|유인하|ERD 설계, 전체 API 구현|
 |홍유진|회원가입, 게시판 관련 API 구현|
 </br>
 
@@ -21,10 +21,9 @@
 
 ## 🛠 기술 스택
 <img src="https://img.shields.io/badge/Java-1A6C80?style=flat-square&logo=java&logoColor=white"> <img src="https://img.shields.io/badge/Spring Boot-6DB33F?style=flat-square&logo=Spring Boot&logoColor=white">
-<img src="https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=python&logoColor=white"> <img src="https://img.shields.io/badge/Flask-000000?style=flat-square&logo=flask&logoColor=white"> <img src="https://img.shields.io/badge/TensorFlow-FF6F00?style=flat-square&logo=tensorflow&logoColor=white"> <img src="https://img.shields.io/badge/Selenium-43B02A?style=flat-square&logo=selenium&logoColor=white">
+<img src="https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=python&logoColor=white"> <img src="https://img.shields.io/badge/Flask-000000?style=flat-square&logo=flask&logoColor=white"> <img src="https://img.shields.io/badge/TensorFlow-FF6F00?style=flat-square&logo=tensorflow&logoColor=white"> 
 </br>
-<img src="https://img.shields.io/badge/Oracle-F80000?style=flat-square&logo=oracle&logoColor=white"> <img src="https://img.shields.io/badge/Ubuntu-E95420?style=flat-square&logo=ubuntu&logoColor=white">
-<img src="https://img.shields.io/badge/IntelliJidea-000000?style=flat-square&logo=intellijidea&logoColor=white">
+<img src="https://img.shields.io/badge/Selenium-43B02A?style=flat-square&logo=selenium&logoColor=white"> <img src="https://img.shields.io/badge/Oracle-F80000?style=flat-square&logo=oracle&logoColor=white"> <img src="https://img.shields.io/badge/Ubuntu-E95420?style=flat-square&logo=ubuntu&logoColor=white"> <img src="https://img.shields.io/badge/IntelliJidea-000000?style=flat-square&logo=intellijidea&logoColor=white">
 
 </br>
 
@@ -33,272 +32,272 @@
 # 📁 Folder 구조
 
 ```jsx
-📁 src. 📁 main. 📁 java
-|                   |_ 📁 com. 📁 java
-|                   |                |_ 📁 config
-|                   |                   |_ Application_config.java
-|                   |                   |_ File_config.java
-|                   |                |_ 📁 controller
-|                   |                   |_ AbandonedController.java
-|                   |                   |_ AdController.java
-|                   |                   |_ BController.java
-|                   |                   |_ CheckToolController.java
-|                   |                   |_ EController.java
-|                   |                   |_ Fontroller.java
-|                   |                   |_ Montroller.java
-|                   |                   |_ PController.java
-|                   |                |_ 📁 dao
-|                   |                   |_ AbandonedDao.java
-|                   |                   |_ AdoptDao.java
-|                   |                   |_ BcmAgeDao.java
-|                   |                   |_ BcmDao.java
-|                   |                   |_ BoardCommentDao.java
-|                   |                   |_ BoardDao.java
-|                   |                   |_ ByememDao.java
-|                   |                   |_ CommentDao.java
-|                   |                   |_ EmergencyDao.java
-|                   |                   |_ MemberDao.java
-|                   |                   |_ PetDao.java
-|                   |                   |_ PetDiagnosisDao.java
-|                   |                   |_ ProductDao.java
-|                   |                   |_ QnaAnswerDao.java
-|                   |                   |_ QnaDao.java
-|                   |                |_ 📁 dto
-|                   |                   |_ 📁 board
-|                   |                     |_ BcmAgeDto.java
-|                   |                     |_ BcmDto.java
-|                   |                     |_ BoardCommentDto.java
-|                   |                     |_ BoardDto.java
-|                   |                     |_ CommentDto.java
-|                   |                   |_ 📁 diagnosis
-|                   |                     |_ PetDiagnosisDto.java
-|                   |                   |_ 📁 qna
-|                   |                     |_ AnswerDto.java
-|                   |                     |_ QnaAnswerDto.java
-|                   |                     |_ QnaDto.java
-|                   |                   |_ AbandonedDto.java
-|                   |                   |_ AdoptDto.java
-|                   |                   |_ AnalyticsDto.java
-|                   |                   |_ ByememDto.java
-|                   |                   |_ DataDto.java
-|                   |                   |_ EmergencyContentDto.java
-|                   |                   |_ EmergencyListDto.java
-|                   |                   |_ EmergencyStepDto.java
-|                   |                   |_ KakaoDto.java
-|                   |                   |_ LogoutDto.java
-|                   |                   |_ MemberDto.java
-|                   |                   |_ OAuthTokenDto.java
-|                   |                   |_ PetDto.java
-|                   |                   |_ ProductDto.java
-|                   |                |_ 📁 service
-|                   |                   |_ 📁 adopt
-|                   |                     |_ AdoptService.java
-|                   |                     |_ AdoptServiceImpl.java
-|                   |                   |_ 📁 board
-|                   |                     |_ BcmAgeService.java
-|                   |                     |_ BcmAgeServiceImpl.java
-|                   |                     |_ BcmService.java
-|                   |                     |_ BcmServiceImpl.java
-|                   |                     |_ BoardCommentService.java
-|                   |                     |_ BoardCommentServiceImpl.java
-|                   |                     |_ BoardService.java
-|                   |                     |_ BoardServiceImpl.java
-|                   |                     |_ CommentService.java
-|                   |                     |_ CommentServiceImpl.java
-|                   |                   |_ 📁 diagnosis
-|                   |                     |_ PetDiagnosisService.java
-|                   |                     |_ PetDiagnosisServiceImpl.java
-|                   |                   |_ 📁 qna
-|                   |                     |_ AnswerService.java
-|                   |                     |_ AnswerServiceImpl.java
-|                   |                     |_ QnaAnswerService.java
-|                   |                     |_ QnaAnswerServiceImpl.java
-|                   |                     |_ QnaService.java
-|                   |                     |_ QnaServiceImpl.java
-|                   |                   |_ AbandonedService.java
-|                   |                   |_ AbandonedServiceImpl.java
-|                   |                   |_ AnalyticsService.java
-|                   |                   |_ AnalyticsServiceImpl.java
-|                   |                   |_ ByememService.java
-|                   |                   |_ ByememServiceImpl.java
-|                   |                   |_ EmailService.java
-|                   |                   |_ EmailServiceImpl.java
-|                   |                   |_ EmergencyService.java
-|                   |                   |_ EmergencyServiceImpl.java
-|                   |                   |_ FlaskClient.java
-|                   |                   |_ MemberService.java
-|                   |                   |_ MemberServiceImpl.java
-|                   |                   |_ PetService.java
-|                   |                   |_ PetServiceImpl.java
-|                   |                   |_ ProductService.java
-|                   |                   |_ ProductServiceImpl.java
-|                   |                |_ 📁 utils
-|                   |                   |_ PaginationUtils.java
-|                   |                |_ HappyPawPetApplication.java
-|                   |                  
-|                   |_ 📁 resources
-|                   |                   |_ 📁 mapper
-|                   |                   |     |_ 📁 adoption
-|                   |                   |     |    |_ adoptionMapper.xml
-|                   |                   |     |_ 📁 board
-|                   |                   |     |    |_ answerMapping.xml
-|                   |                   |     |    |_ bcmAgeMapping.xml
-|                   |                   |     |    |_ bcmMapping.xml
-|                   |                   |     |    |_ boardCommentMapping.xml
-|                   |                   |     |    |_ boardMapping.xml
-|                   |                   |     |    |_ commentMapping.xml
-|                   |                   |     |    |_ qnaAnswerMapping.xml
-|                   |                   |     |    |_ qnaMapping.xml
-|                   |                   |     |_ 📁 byemem
-|                   |                   |     |    |_ byememMapping.xml
-|                   |                   |     |_ 📁 diagnosis
-|                   |                   |     |    |_ petDiagnosisMapping.xml
-|                   |                   |     |_ 📁 emergency
-|                   |                   |     |    |_ emergencyMapper.xml
-|                   |                   |     |_ 📁 member
-|                   |                   |     |    |_ memberMapping.xml
-|                   |                   |     |_ 📁 pet
-|                   |                   |     |    |_ petMapping.xml
-|                   |                   |     |_ 📁 product
-|                   |                   |          |_ productMapping.xml
-|                   |                   |_ 📁 static
-|                   |                   |      |_ 📁 css
-|                   |                   |      |    |_ 📁 admin
-|                   |                   |      |    |_ admin.css
-|                   |                   |      |    |_ adminAdoption.css
-|                   |                   |      |    |_ adminBoard.css
-|                   |                   |      |    |_ adminBoardDetail.css
-|                   |                   |      |    |_ adminMember.css
-|                   |                   |      |    |_ adminPet.css
-|                   |                   |      |    |_ adminQna.css
-|                   |                   |      |    |_ adminTop.css
-|                   |                   |      |    |_ boardComment.css
-|                   |                   |      |    |_ memDetail.css
-|                   |                   |      |    |_ subbanner.css
-|                   |                   |      |_ 📁 adoption
-|                   |                   |      |    |_ Adog_ex.css
-|                   |                   |      |    |_ adoption_review.css
-|                   |                   |      |    |_ animalList.css
-|                   |                   |      |    |_ view.css
-|                   |                   |      |    |_ write.css
-|                   |                   |      |_ 📁 board
-|                   |                   |      |    |_ answer.css
-|                   |                   |      |    |_ list.css
-|                   |                   |      |    |_ qnaList.css
-|                   |                   |      |    |_ qnaView.css
-|                   |                   |      |    |_ question.css
-|                   |                   |      |    |_ view.css
-|                   |                   |      |    |_ write.css
-|                   |                   |      |_ 📁 diagnosis
-|                   |                   |      |    |_ CheckTool.css
-|                   |                   |      |    |_ diagnosis.css
-|                   |                   |      |    |_ diagnosisHistory.css
-|                   |                   |      |    |_ dom.css
-|                   |                   |      |_ 📁 emergency
-|                   |                   |      |    |_ bootstrap.min.css
-|                   |                   |      |    |_ bootstrap-icons.css
-|                   |                   |      |    |_ content.css
-|                   |                   |      |    |_ modal.css
-|                   |                   |      |    |_ owl.carousel.min.css
-|                   |                   |      |    |_ owl.theme.default.min.css
-|                   |                   |      |_ 📁 login
-|                   |                   |      |    |_ findId.css
-|                   |                   |      |    |_ findPw.css
-|                   |                   |      |    |_ login.css
-|                   |                   |      |    |_ memberForm.css
-|                   |                   |      |    |_ welcome.css
-|                   |                   |      |_ 📁 mypage
-|                   |                   |           |_ byeMem.css
-|                   |                   |           |_ changePw.css
-|                   |                   |           |_ checkPw.css
-|                   |                   |           |_ dEdit.css
-|                   |                   |           |_ dogForm.css
-|                   |                   |           |_ mypage.css
-|                   |                   |           |_ pEdit.css
-|                   |                   |           |_ petEdit.css
-|                   |                   |           |_ petForm.css
-|                   |                   |      |_ footer.css
-|                   |                   |      |_ index.css
-|                   |                   |      |_ top.css
-|                   |                   |_ 📁 fonts
-|                   |                   |_ 📁 image
-|                   |                   |_ 📁 js
-|                   |                   |      |_ bootstrap.bundle.min.js
-|                   |                   |      |_ custom.js
-|                   |                   |      |_ jquery.min.js
-|                   |                   |      |_ owl.carousel.min.js
-|                   |                   |_ 📁 templates
-|                   |                   |_ application.properties
-|                   |                   |_ application-private.properties
-|                   |_ 📁 webapp
-|                   |    |_ 📁 WEB-INF
-|                   |    |    |_ 📁 views
-|                   |    |         |_ 📁 admin
-|                   |    |         |     |_ admin.jsp
-|                   |    |         |     |_ adoption.jsp
-|                   |    |         |     |_ board.jsp
-|                   |    |         |     |_ boardComment.jsp
-|                   |    |         |     |_ boardDetail.jsp
-|                   |    |         |     |_ member.jsp
-|                   |    |         |     |_ memDetail.jsp
-|                   |    |         |     |_ pet.jsp
-|                   |    |         |     |_ qna.jsp
-|                   |    |         |     |_ subbanner.jsp
-|                   |    |         |_ 📁 adoption
-|                   |    |         |     |_ Adog_ex.jsp
-|                   |    |         |     |_ adopt_review.jsp
-|                   |    |         |     |_ adopt_writing.jsp
-|                   |    |         |     |_ animalList.jsp
-|                   |    |         |     |_ Cardlist.jsp
-|                   |    |         |     |_ modify.jsp
-|                   |    |         |     |_ notice.jsp
-|                   |    |         |     |_ reply.jsp
-|                   |    |         |     |_ view.jsp
-|                   |    |         |_ 📁 board
-|                   |    |         |     |_ answer.jsp
-|                   |    |         |     |_ boardUpdate.jsp
-|                   |    |         |     |_ list.jsp
-|                   |    |         |     |_ qnaList.jsp
-|                   |    |         |     |_ qnaUpdate.jsp
-|                   |    |         |     |_ qnaView.jsp
-|                   |    |         |     |_ question.jsp
-|                   |    |         |     |_ view.jsp
-|                   |    |         |     |_ write.jsp
-|                   |    |         |_ 📁 conditions
-|                   |    |         |     |_ eyeCondition.jsp
-|                   |    |         |     |_ skinCondition.jsp
-|                   |    |         |_ 📁 diagnosis
-|                   |    |         |     |_ CheckTool.jsp
-|                   |    |         |     |_ diagnosis.jsp
-|                   |    |         |     |_ diagnosisHistory.jsp
-|                   |    |         |     |_ resultEye.jsp
-|                   |    |         |     |_ resultSkin.jsp
-|                   |    |         |_ 📁 emergency
-|                   |    |         |     |_ emergency.jsp
-|                   |    |         |_ 📁 footer
-|                   |    |         |     |_ footer.jsp
-|                   |    |         |_ 📁 login
-|                   |    |         |     |_ doLogin.jsp
-|                   |    |         |     |_ findId.jsp
-|                   |    |         |     |_ findPw.jsp
-|                   |    |         |     |_ login.jsp
-|                   |    |         |     |_ memberForm.jsp
-|                   |    |         |     |_ welcome.jsp
-|                   |    |         |_ 📁 mypage
-|                   |    |         |     |_ byeMem.jsp
-|                   |    |         |     |_ changePw.jsp
-|                   |    |         |     |_ checkPw.jsp
-|                   |    |         |     |_ myPage.jsp
-|                   |    |         |     |_ pEdit.jsp
-|                   |    |         |     |_ petEdit.jsp
-|                   |    |         |     |_ petForm.jsp
-|                   |    |         |_ 📁 top
-|                   |    |         |     |_ adminTop.jsp
-|                   |    |         |     |_ top.jsp
-|                   |    |         |     |_ index.jsp
-|
+📁 src
+|   |_ 📁 main
+|        |_ 📁 java
+|        |    |_ 📁 com
+|        |         |_ 📁 java
+|        |              |_ 📁 config
+|        |              |    |_ Application_config.java
+|        |              |    |_ File_config.java
+|        |              |_ 📁 controller
+|        |              |    |_ AbandonedController.java
+|        |              |    |_ AdController.java
+|        |              |    |_ BController.java
+|        |              |    |_ CheckToolController.java
+|        |              |    |_ EController.java
+|        |              |    |_ Fontroller.java
+|        |              |    |_ Montroller.java
+|        |              |    |_ PController.java
+|        |              |_ 📁 dao
+|        |              |    |_ AbandonedDao.java
+|        |              |    |_ AdoptDao.java
+|        |              |    |_ BcmAgeDao.java
+|        |              |    |_ BcmDao.java
+|        |              |    |_ BoardCommentDao.java
+|        |              |    |_ BoardDao.java
+|        |              |    |_ ByememDao.java
+|        |              |    |_ CommentDao.java
+|        |              |    |_ EmergencyDao.java
+|        |              |    |_ MemberDao.java
+|        |              |    |_ PetDao.java
+|        |              |    |_ PetDiagnosisDao.java
+|        |              |    |_ ProductDao.java
+|        |              |    |_ QnaAnswerDao.java
+|        |              |    |_ QnaDao.java
+|        |              |_ 📁 dto
+|        |              |    |_ 📁 board
+|        |              |    |    |_ BcmAgeDto.java
+|        |              |    |    |_ BcmDto.java
+|        |              |    |    |_ BoardCommentDto.java
+|        |              |    |    |_ BoardDto.java
+|        |              |    |    |_ CommentDto.java
+|        |              |    |_ 📁 diagnosis
+|        |              |    |    |_ PetDiagnosisDto.java
+|        |              |    |_ 📁 qna
+|        |              |    |    |_ AnswerDto.java
+|        |              |    |    |_ QnaAnswerDto.java
+|        |              |    |    |_ QnaDto.java
+|        |              |    |_ AbandonedDto.java
+|        |              |    |_ AdoptDto.java
+|        |              |    |_ AnalyticsDto.java
+|        |              |    |_ ByememDto.java
+|        |              |    |_ DataDto.java
+|        |              |    |_ EmergencyContentDto.java
+|        |              |    |_ EmergencyListDto.java
+|        |              |    |_ EmergencyStepDto.java
+|        |              |    |_ KakaoDto.java
+|        |              |    |_ LogoutDto.java
+|        |              |    |_ MemberDto.java
+|        |              |    |_ OAuthTokenDto.java
+|        |              |    |_ PetDto.java
+|        |              |    |_ ProductDto.java
+|        |              |_ 📁 service
+|        |              |    |_ 📁 adopt
+|        |              |    |    |_ AdoptService.java
+|        |              |    |    |_ AdoptServiceImpl.java
+|        |              |    |_ 📁 board
+|        |              |    |    |_ BcmAgeService.java
+|        |              |    |    |_ BcmAgeServiceImpl.java
+|        |              |    |    |_ BcmService.java
+|        |              |    |    |_ BcmServiceImpl.java
+|        |              |    |    |_ BoardCommentService.java
+|        |              |    |    |_ BoardCommentServiceImpl.java
+|        |              |    |    |_ BoardService.java
+|        |              |    |    |_ BoardServiceImpl.java
+|        |              |    |    |_ CommentService.java
+|        |              |    |    |_ CommentServiceImpl.java
+|        |              |    |_ 📁 diagnosis
+|        |              |    |    |_ PetDiagnosisService.java
+|        |              |    |    |_ PetDiagnosisServiceImpl.java
+|        |              |    |_ 📁 qna
+|        |              |    |    |_ AnswerService.java
+|        |              |    |    |_ AnswerServiceImpl.java
+|        |              |    |    |_ QnaAnswerService.java
+|        |              |    |    |_ QnaAnswerServiceImpl.java
+|        |              |    |    |_ QnaService.java
+|        |              |    |    |_ QnaServiceImpl.java
+|        |              |    |_ AbandonedService.java
+|        |              |    |_ AbandonedServiceImpl.java
+|        |              |    |_ AnalyticsService.java
+|        |              |    |_ AnalyticsServiceImpl.java
+|        |              |    |_ ByememService.java
+|        |              |    |_ ByememServiceImpl.java
+|        |              |    |_ EmailService.java
+|        |              |    |_ EmailServiceImpl.java
+|        |              |    |_ EmergencyService.java
+|        |              |    |_ EmergencyServiceImpl.java
+|        |              |    |_ FlaskClient.java
+|        |              |    |_ MemberService.java
+|        |              |    |_ MemberServiceImpl.java
+|        |              |    |_ PetService.java
+|        |              |    |_ PetServiceImpl.java
+|        |              |    |_ ProductService.java
+|        |              |    |_ ProductServiceImpl.java
+|        |              |_ 📁 utils
+|        |              |    |_ PaginationUtils.java
+|        |              |_ HappyPawPetApplication.java
+|        |_ 📁 resources
+|        |    |_ 📁 mapper
+|        |    |    |_ 📁 adoption
+|        |    |    |    |_ adoptionMapper.xml
+|        |    |    |_ 📁 board
+|        |    |    |    |_ answerMapping.xml
+|        |    |    |    |_ bcmAgeMapping.xml
+|        |    |    |    |_ bcmMapping.xml
+|        |    |    |    |_ boardCommentMapping.xml
+|        |    |    |    |_ boardMapping.xml
+|        |    |    |    |_ commentMapping.xml
+|        |    |    |    |_ qnaAnswerMapping.xml
+|        |    |    |    |_ qnaMapping.xml
+|        |    |    |_ 📁 byemem
+|        |    |    |    |_ byememMapping.xml
+|        |    |    |_ 📁 diagnosis
+|        |    |    |    |_ petDiagnosisMapping.xml
+|        |    |    |_ 📁 emergency
+|        |    |    |    |_ emergencyMapper.xml
+|        |    |    |_ 📁 member
+|        |    |    |    |_ memberMapping.xml
+|        |    |    |_ 📁 pet
+|        |    |    |    |_ petMapping.xml
+|        |    |    |_ 📁 product
+|        |    |         |_ productMapping.xml
+|        |    |_ 📁 static
+|        |    |    |_ 📁 css
+|        |    |    |    |_ 📁 admin
+|        |    |    |    |    |_ admin.css
+|        |    |    |    |    |_ adminAdoption.css
+|        |    |    |    |    |_ adminBoard.css
+|        |    |    |    |    |_ adminBoardDetail.css
+|        |    |    |    |    |_ adminMember.css
+|        |    |    |    |    |_ adminPet.css
+|        |    |    |    |    |_ adminQna.css
+|        |    |    |    |    |_ adminTop.css
+|        |    |    |    |_ boardComment.css
+|        |    |    |    |_ memDetail.css
+|        |    |    |    |_ subbanner.css
+|        |    |    |_ 📁 adoption
+|        |    |    |    |_ Adog_ex.css
+|        |    |    |    |_ adoption_review.css
+|        |    |    |    |_ animalList.css
+|        |    |    |    |_ view.css
+|        |    |    |    |_ write.css
+|        |    |    |_ 📁 board
+|        |    |    |    |_ answer.css
+|        |    |    |    |_ list.css
+|        |    |    |    |_ qnaList.css
+|        |    |    |    |_ qnaView.css
+|        |    |    |    |_ question.css
+|        |    |    |    |_ view.css
+|        |    |    |    |_ write.css
+|        |    |    |_ 📁 diagnosis
+|        |    |    |    |_ CheckTool.css
+|        |    |    |    |_ diagnosis.css
+|        |    |    |    |_ diagnosisHistory.css
+|        |    |    |    |_ dom.css
+|        |    |    |_ 📁 emergency
+|        |    |    |    |_ bootstrap.min.css
+|        |    |    |    |_ bootstrap-icons.css
+|        |    |    |    |_ content.css
+|        |    |    |    |_ modal.css
+|        |    |    |    |_ owl.carousel.min.css
+|        |    |    |    |_ owl.theme.default.min.css
+|        |    |    |_ 📁 login
+|        |    |    |    |_ findId.css
+|        |    |    |    |_ findPw.css
+|        |    |    |    |_ login.css
+|        |    |    |    |_ memberForm.css
+|        |    |    |    |_ welcome.css
+|        |    |    |_ 📁 mypage
+|        |    |         |_ byeMem.css
+|        |    |         |_ changePw.css
+|        |    |         |_ checkPw.css
+|        |    |         |_ dEdit.css
+|        |    |         |_ dogForm.css
+|        |    |         |_ mypage.css
+|        |    |         |_ pEdit.css
+|        |    |         |_ petEdit.css
+|        |    |         |_ petForm.css
+|        |    |_ footer.css
+|        |    |_ index.css
+|        |    |_ top.css
+|        |_ 📁 fonts
+|        |_ 📁 image
+|        |_ 📁 js
+|        |    |_ bootstrap.bundle.min.js
+|        |    |_ custom.js
+|        |    |_ jquery.min.js
+|        |    |_ owl.carousel.min.js
+|        |_ 📁 templates
+|        |_ application.properties
+|        |_ application-private.properties
+|   |_ 📁 webapp
+|        |_ 📁 WEB-INF
+|             |_ 📁 views
+|                  |_ 📁 admin
+|                  |    |_ admin.jsp
+|                  |    |_ adoption.jsp
+|                  |    |_ board.jsp
+|                  |    |_ boardComment.jsp
+|                  |    |_ boardDetail.jsp
+|                  |    |_ member.jsp
+|                  |    |_ memDetail.jsp
+|                  |    |_ pet.jsp
+|                  |    |_ qna.jsp
+|                  |    |_ subbanner.jsp
+|                  |_ 📁 adoption
+|                  |    |_ Adog_ex.jsp
+|                  |    |_ adopt_review.jsp
+|                  |    |_ adopt_writing.jsp
+|                  |    |_ animalList.jsp
+|                  |    |_ Cardlist.jsp
+|                  |    |_ modify.jsp
+|                  |    |_ notice.jsp
+|                  |    |_ reply.jsp
+|                  |    |_ view.jsp
+|                  |_ 📁 board
+|                  |    |_ answer.jsp
+|                  |    |_ boardUpdate.jsp
+|                  |    |_ list.jsp
+|                  |    |_ qnaList.jsp
+|                  |    |_ qnaUpdate.jsp
+|                  |    |_ qnaView.jsp
+|                  |    |_ question.jsp
+|                  |    |_ view.jsp
+|                  |    |_ write.jsp
+|                  |_ 📁 conditions
+|                  |    |_ eyeCondition.jsp
+|                  |    |_ skinCondition.jsp
+|                  |_ 📁 diagnosis
+|                  |    |_ CheckTool.jsp
+|                  |    |_ diagnosis.jsp
+|                  |    |_ diagnosisHistory.jsp
+|                  |    |_ resultEye.jsp
+|                  |    |_ resultSkin.jsp
+|                  |_ 📁 emergency
+|                  |    |_ emergency.jsp
+|                  |_ 📁 footer
+|                  |    |_ footer.jsp
+|                  |_ 📁 login
+|                  |    |_ doLogin.jsp
+|                  |    |_ findId.jsp
+|                  |    |_ findPw.jsp
+|                  |    |_ login.jsp
+|                  |    |_ memberForm.jsp
+|                  |    |_ welcome.jsp
+|                  |_ 📁 mypage
+|                  |    |_ byeMem.jsp
+|                  |    |_ changePw.jsp
+|                  |    |_ checkPw.jsp
+|                  |    |_ myPage.jsp
+|                  |    |_ pEdit.jsp
+|                  |    |_ petEdit.jsp
+|                  |    |_ petForm.jsp
+|                  |_ 📁 top
+|                       |_ adminTop.jsp
+|                       |_ top.jsp
+|                       |_ index.jsp
 📁 test
-
 
 ```
 
