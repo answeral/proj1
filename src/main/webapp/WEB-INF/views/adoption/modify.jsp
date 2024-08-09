@@ -20,7 +20,7 @@
 	<section>
 	    <h1>게시글수정</h1>
 	    <hr>
-	
+
 	    <form action="/adoption/doUpdate" name="modify" method="post" enctype="multipart/form-data">
 	      <table>
 	      <input type="hidden" name="bno" value="${adoptDto.bno}">
@@ -69,7 +69,7 @@
 	        <button type="button" class="cancel" onclick="javascript:location.href='/adoption/view?bno=${adoptDto.bno}'">취소</button>
 	      </div>
 	    </form>
-	
+
 	</section>
 	<!-- --------------------------------------------------------------------- -->
 	<%@ include file="../footer/footer.jsp" %>

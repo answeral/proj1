@@ -43,11 +43,11 @@
 				        <div class="title">
 				          <input type="text" size="16" name="searchWord" id="searchWord" value="${map.searchWord }">
 				        </div>
-				        
+
 				        <button type="submit" onclick="sBtn()"><i class="fas fa-search"></i></button>
 			      	</form>
 			    </div>
-			    
+
 		    <table>
 		      <colgroup>
 		        <col width="18%">

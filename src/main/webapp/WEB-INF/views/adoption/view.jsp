@@ -3,7 +3,7 @@
     pageEncoding="UTF-8"%>
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
-<%@taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn" %> 
+<%@taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -22,14 +22,14 @@
     		location.href="/adoption/delete?bno="+bno;
     	}
     }
-    
+
     function updateBtn(bno){
     	//alert(bno);
     	if(confirm("게시글을 수정하시겠습니까?")){
     		location.href="/adoption/update?bno="+bno;
     	}
     }
-    
+
   </script>
 </head>
 <body id="qnaView">
@@ -73,9 +73,9 @@
 		      </tr>
 		      <!--이전글 & 다음글 ----------------------------------------------------------------- -->
 		      <tr>
-		        <td colspan="6"><strong>다음글</strong> <span class="separator">|</span> 
+		        <td colspan="6"><strong>다음글</strong> <span class="separator">|</span>
 		        	<c:if test="${map.prevDto.bno != null }">
-		        		<a href="/adoption/view?bno=${map.prevDto.bno}&page=${page}" id="text22">[게시글] ${map.prevDto.btitle }</a> 
+		        		<a href="/adoption/view?bno=${map.prevDto.bno}&page=${page}" id="text22">[게시글] ${map.prevDto.btitle }</a>
 		        	</c:if>
 		        	<c:if test="${map.prevDto.bno == null }">
 		        		다음글이 없습니다.
@@ -83,7 +83,7 @@
 		        </td>
 		      </tr>
 		      <tr>
-		        <td colspan="6"><strong>이전글</strong> <span class="separator">|</span> 
+		        <td colspan="6"><strong>이전글</strong> <span class="separator">|</span>
 		        	<c:if test="${map.nextDto.bno != null }">
 		        	  <a href="/adoption/view?bno=${map.nextDto.bno}&page=${page}" id="text22">[게시글] ${map.nextDto.btitle }</a>
 		        	</c:if>
@@ -109,7 +109,7 @@
 		    		</div>
 		    	</c:otherwise>
 		    </c:choose>
-		</div>	 
+		</div>
 	</section>
 	<!-- -------------------------------------------------------------------- -->
 	<%@ include file="../footer/footer.jsp" %>

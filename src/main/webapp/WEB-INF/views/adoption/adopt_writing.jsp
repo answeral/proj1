@@ -21,7 +21,7 @@
 		<section>
 		    <h1>입양후기 작성</h1>
 		    <hr>
-		    
+
 		    <form action="/adoption/adopt_writing" name="write" method="post" enctype="multipart/form-data">
 		      <table>
 		        <colgroup>
