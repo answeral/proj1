@@ -30,7 +30,7 @@
             text-align: center;
             margin: 20px 0;
         }
-        img{width:400px;
+        img{
             height:400px;
             border-radius:15px;
             padding-right:0 !important;
