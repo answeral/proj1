@@ -8,7 +8,9 @@
 
 |담당자|담당 내용|
 |:---|:---|
-|김윤지|Git & 프로젝트 세팅, ERD 설계, 이미지 유사도 측정 구현, 전체 API 구현, 배포|
+|이규원|Git & 프로젝트 세팅, ERD 설계, 전체 API 구현|
+|이규원|Git & 프로젝트 세팅, ERD 설계, 전체 API 구현|
+|이규원|Git & 프로젝트 세팅, ERD 설계, 전체 API 구현|
 </br>
 
 ## 🔑 Key Feature
@@ -21,9 +23,8 @@
 <img src="https://img.shields.io/badge/Java-1A6C80?style=flat-square&logo=java&logoColor=white"> <img src="https://img.shields.io/badge/Spring Boot-6DB33F?style=flat-square&logo=Spring Boot&logoColor=white">
 <img src="https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=python&logoColor=white"> <img src="https://img.shields.io/badge/Flask-000000?style=flat-square&logo=flask&logoColor=white"> <img src="https://img.shields.io/badge/TensorFlow-FF6F00?style=flat-square&logo=tensorflow&logoColor=white"> <img src="https://img.shields.io/badge/Selenium-43B02A?style=flat-square&logo=selenium&logoColor=white">
 <br/>
-<img src="https://img.shields.io/badge/MYSQL-4479A1?style=flat-square&logo=MYSQL&logoColor=white">
-<img src="https://img.shields.io/badge/Amazon EC2-FF9900?style=flat-square&logo=Amazon EC2&logoColor=white">
-<img src="https://img.shields.io/badge/Amazon RDS-527FFF?style=flat-square&logo=Amazon RDS&logoColor=white">
+<img src="https://img.shields.io/badge/Oracle#F80000?style=flat-square&logo=ORACLE&logoColor=white">
+
 
 </br>
 
