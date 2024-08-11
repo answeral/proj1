@@ -43,6 +43,7 @@
 |        |              |_ 📁 controller
 |        |              |    |_ AbandonedController.java
 |        |              |    |_ AdController.java
+|        |              |    |_ AdoptController.java
 |        |              |    |_ BController.java
 |        |              |    |_ CheckToolController.java
 |        |              |    |_ EController.java
@@ -52,6 +53,8 @@
 |        |              |_ 📁 dao
 |        |              |    |_ AbandonedDao.java
 |        |              |    |_ AdoptDao.java
+|        |              |    |_ AdoptLikelistDao.java
+|        |              |    |_ Answer.java
 |        |              |    |_ BcmAgeDao.java
 |        |              |    |_ BcmDao.java
 |        |              |    |_ BoardCommentDao.java
@@ -59,6 +62,7 @@
 |        |              |    |_ ByememDao.java
 |        |              |    |_ CommentDao.java
 |        |              |    |_ EmergencyDao.java
+|        |              |    |_ HappyAdoptionlikeDao.java
 |        |              |    |_ MemberDao.java
 |        |              |    |_ PetDao.java
 |        |              |    |_ PetDiagnosisDao.java
@@ -80,12 +84,14 @@
 |        |              |    |    |_ QnaDto.java
 |        |              |    |_ AbandonedDto.java
 |        |              |    |_ AdoptDto.java
+|        |              |    |_ AdoptLikelist.java
 |        |              |    |_ AnalyticsDto.java
 |        |              |    |_ ByememDto.java
 |        |              |    |_ DataDto.java
 |        |              |    |_ EmergencyContentDto.java
 |        |              |    |_ EmergencyListDto.java
 |        |              |    |_ EmergencyStepDto.java
+|        |              |    |_ HappyAdoptionlikeDto.java
 |        |              |    |_ KakaoDto.java
 |        |              |    |_ LogoutDto.java
 |        |              |    |_ MemberDto.java
@@ -94,6 +100,8 @@
 |        |              |    |_ ProductDto.java
 |        |              |_ 📁 service
 |        |              |    |_ 📁 adopt
+|        |              |    |    |_ AdoptLikelistService.java
+|        |              |    |    |_ AdoptLikelistServiceImpl.java
 |        |              |    |    |_ AdoptService.java
 |        |              |    |    |_ AdoptServiceImpl.java
 |        |              |    |_ 📁 board
@@ -128,6 +136,8 @@
 |        |              |    |_ EmergencyService.java
 |        |              |    |_ EmergencyServiceImpl.java
 |        |              |    |_ FlaskClient.java
+|        |              |    |_ HappyAdoptionlikeService.java
+|        |              |    |_ HappyAdoptionlikeServiceImpl.java
 |        |              |    |_ MemberService.java
 |        |              |    |_ MemberServiceImpl.java
 |        |              |    |_ PetService.java
@@ -140,6 +150,7 @@
 |        |_ 📁 resources
 |        |    |_ 📁 mapper
 |        |    |    |_ 📁 adoption
+|        |    |    |    |_ adopLikelistMapper.xml
 |        |    |    |    |_ adoptionMapper.xml
 |        |    |    |_ 📁 board
 |        |    |    |    |_ answerMapping.xml
@@ -158,6 +169,8 @@
 |        |    |    |    |_ emergencyMapper.xml
 |        |    |    |_ 📁 member
 |        |    |    |    |_ memberMapping.xml
+|        |    |    |_ 📁 mypage
+|        |    |    |    |_ HappyAdoptionlikeMapper.xml
 |        |    |    |_ 📁 pet
 |        |    |    |    |_ petMapping.xml
 |        |    |    |_ 📁 product
@@ -173,54 +186,55 @@
 |        |    |    |    |    |_ adminPet.css
 |        |    |    |    |    |_ adminQna.css
 |        |    |    |    |    |_ adminTop.css
-|        |    |    |    |_ boardComment.css
-|        |    |    |    |_ memDetail.css
-|        |    |    |    |_ subbanner.css
-|        |    |    |_ 📁 adoption
-|        |    |    |    |_ Adog_ex.css
-|        |    |    |    |_ adoption_review.css
-|        |    |    |    |_ animalList.css
-|        |    |    |    |_ view.css
-|        |    |    |    |_ write.css
-|        |    |    |_ 📁 board
-|        |    |    |    |_ answer.css
-|        |    |    |    |_ list.css
-|        |    |    |    |_ qnaList.css
-|        |    |    |    |_ qnaView.css
-|        |    |    |    |_ question.css
-|        |    |    |    |_ view.css
-|        |    |    |    |_ write.css
-|        |    |    |_ 📁 diagnosis
-|        |    |    |    |_ CheckTool.css
-|        |    |    |    |_ diagnosis.css
-|        |    |    |    |_ diagnosisHistory.css
-|        |    |    |    |_ dom.css
-|        |    |    |_ 📁 emergency
-|        |    |    |    |_ bootstrap.min.css
-|        |    |    |    |_ bootstrap-icons.css
-|        |    |    |    |_ content.css
-|        |    |    |    |_ modal.css
-|        |    |    |    |_ owl.carousel.min.css
-|        |    |    |    |_ owl.theme.default.min.css
-|        |    |    |_ 📁 login
-|        |    |    |    |_ findId.css
-|        |    |    |    |_ findPw.css
-|        |    |    |    |_ login.css
-|        |    |    |    |_ memberForm.css
-|        |    |    |    |_ welcome.css
-|        |    |    |_ 📁 mypage
-|        |    |         |_ byeMem.css
-|        |    |         |_ changePw.css
-|        |    |         |_ checkPw.css
-|        |    |         |_ dEdit.css
-|        |    |         |_ dogForm.css
-|        |    |         |_ mypage.css
-|        |    |         |_ pEdit.css
-|        |    |         |_ petEdit.css
-|        |    |         |_ petForm.css
-|        |    |_ footer.css
-|        |    |_ index.css
-|        |    |_ top.css
+|        |    |    |    |    |_ boardComment.css
+|        |    |    |    |    |_ memDetail.css
+|        |    |    |    |    |_ subbanner.css
+|        |    |    |    |_ 📁 adoption
+|        |    |    |    |    |_ Adog_ex.css
+|        |    |    |    |    |_ animalList.css
+|        |    |    |    |    |_ Cardlist.css
+|        |    |    |    |    |_ view.css
+|        |    |    |    |    |_ write.css
+|        |    |    |    |_ 📁 board
+|        |    |    |    |    |_ answer.css
+|        |    |    |    |    |_ list.css
+|        |    |    |    |    |_ qnaList.css
+|        |    |    |    |    |_ qnaView.css
+|        |    |    |    |    |_ question.css
+|        |    |    |    |    |_ view.css
+|        |    |    |    |    |_ write.css
+|        |    |    |    |_ 📁 diagnosis
+|        |    |    |    |    |_ CheckTool.css
+|        |    |    |    |    |_ diagnosis.css
+|        |    |    |    |    |_ diagnosisHistory.css
+|        |    |    |    |    |_ dom.css
+|        |    |    |    |_ 📁 emergency
+|        |    |    |    |    |_ bootstrap.min.css
+|        |    |    |    |    |_ bootstrap-icons.css
+|        |    |    |    |    |_ content.css
+|        |    |    |    |    |_ modal.css
+|        |    |    |    |    |_ owl.carousel.min.css
+|        |    |    |    |    |_ owl.theme.default.min.css
+|        |    |    |    |_ 📁 login
+|        |    |    |    |    |_ findId.css
+|        |    |    |    |    |_ findPw.css
+|        |    |    |    |    |_ login.css
+|        |    |    |    |    |_ memberForm.css
+|        |    |    |    |    |_ welcome.css
+|        |    |    |    |_ 📁 mypage
+|        |    |    |    |    |_ byeMem.css
+|        |    |    |    |    |_ changePw.css
+|        |    |    |    |    |_ checkPw.css
+|        |    |    |    |    |_ dEdit.css
+|        |    |    |    |    |_ dogForm.css
+|        |    |    |    |    |_ likelist.css
+|        |    |    |    |    |_ mypage.css
+|        |    |    |    |    |_ pEdit.css
+|        |    |    |    |    |_ petEdit.css
+|        |    |    |    |    |_ petForm.css
+|        |    |    |    |_ footer.css
+|        |    |    |    |_ index.css
+|        |    |    |    |_ top.css
 |        |_ 📁 fonts
 |        |_ 📁 image
 |        |_ 📁 js
@@ -247,7 +261,6 @@
 |                  |    |_ subbanner.jsp
 |                  |_ 📁 adoption
 |                  |    |_ Adog_ex.jsp
-|                  |    |_ adopt_review.jsp
 |                  |    |_ adopt_writing.jsp
 |                  |    |_ animalList.jsp
 |                  |    |_ Cardlist.jsp
@@ -289,6 +302,7 @@
 |                  |    |_ byeMem.jsp
 |                  |    |_ changePw.jsp
 |                  |    |_ checkPw.jsp
+|                  |    |_ likelist.jsp
 |                  |    |_ myPage.jsp
 |                  |    |_ pEdit.jsp
 |                  |    |_ petEdit.jsp
@@ -296,7 +310,7 @@
 |                  |_ 📁 top
 |                       |_ adminTop.jsp
 |                       |_ top.jsp
-|                       |_ index.jsp
+|                  |_ index.jsp
 📁 test
 
 ```
