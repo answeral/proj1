@@ -88,7 +88,7 @@
                 <div class="col-lg-12 col-12">
                     <div class="owl-carousel owl-theme">
                         <c:forEach items="${list}" var="eLDto">
-                            <div class="owl-carousel-info-wrap item">
+                            <div class="owl-carousel-info-wrap item" style="height:300px;">
                                 <a class="go_content" id="${eLDto.emer_list_no}">
                                     <img src="${eLDto.emer_list_img}" class="owl-carousel-image img-fluid" alt="">
                                     <div class="owl-carousel-info">
