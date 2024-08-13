@@ -1,38 +1,37 @@
 @charset "UTF-8";
 
-#memberForm{height: 2000px;}       
-section{position: relative; top:100px; left:0; height:100%; 
-	background-color: #FAF7F0; flex:1;}
+section{position: relative; top:100px; left:0; height:auto;
+    background-color: #FAF7F0; flex:1; padding-bottom: 150px;}
 .subbanner { position: relative; width: 100%; height: 300px; background: url('/image/car_dog.jpg') no-repeat 0 -500px;
-			background-size: cover; }
-.main{position: relative; width: 1100px; height:800px; margin: 0 auto; 
-	  padding-top:60px; box-sizing: border-box;}
+    background-size: cover; }
+.main{position: relative; width: 1100px; margin: 0 auto;
+    padding-top:60px; box-sizing: border-box;}
 .main > h2{ font-size: 35px; color: #342F2F; text-align: center;
-            font-family: Roboto;
-            font-optical-sizing: auto;
-            font-weight: 550;
-            font-style: normal; }
+    font-family: Roboto;
+    font-optical-sizing: auto;
+    font-weight: 550;
+    font-style: normal; }
 
-form > h4{ width : 1100px; height :  36px; color: #333; 
-			font-size: 23px;
-            font-weight: 600;
-            box-sizing: border-box;
-            margin : 0 auto; margin-bottom: 10px;
-            padding: 0 0 10px 10px; }
+form > h4{ width : 1100px; height :  36px; color: #333;
+    font-size: 23px;
+    font-weight: 600;
+    box-sizing: border-box;
+    margin : 0 auto; margin-bottom: 10px;
+    padding: 0 0 10px 10px; }
 h4 > span { font-size: 13px; color: #555;}
 form{margin-top: 45px; margin-bottom: 30px;}
 form > button{ margin-top: 50px; margin-left: 5px; width:100%; height: 55px; background: #342F2F; color: white; font-size: 18px;
-            font-weight: bold; border: none; }
+    font-weight: bold; border: none; }
 
 .fieldset_class{
-	    width: 1100px;
-	    font-size: 14px;
-	    margin: 0 auto;
-	    border-top: 1px solid rgb(209, 209, 209);
-	    border-left: none;
-	    border-right: none;
-	    border-bottom: none;
-	    margin-bottom: 15px;
+    width: 1100px;
+    font-size: 14px;
+    margin: 0 auto;
+    border-top: 1px solid rgb(209, 209, 209);
+    border-left: none;
+    border-right: none;
+    border-bottom: none;
+    margin-bottom: 15px;
 }
 .fieldset_class dl dt {
     float: left;
@@ -142,20 +141,20 @@ input[type="password"] { height: 28px; display: inline-block;}
 /*약관동의 css--------------------------------------------------------------------------------*/
 .agreeForm{position: relative; top:10px; left:0; height:100%;}
 
-.term__{position: relative; width: 100%; height:600px; margin: 0 auto; 
+.term__{position: relative; width: 100%; height:600px; margin: 0 auto;
     padding-top:60px; box-sizing: border-box;}
 
-h1{display: block; width : 1100px; height :  45px; color: #333; 
-			font-size: 23px;
-            font-weight: 650;
-            box-sizing: border-box;
-            margin : 0 auto; margin-bottom: 5px;
-            padding: 0 0 10px 10px; }
+h1{display: block; width : 1100px; height :  45px; color: #333;
+    font-size: 23px;
+    font-weight: 650;
+    box-sizing: border-box;
+    margin : 0 auto; margin-bottom: 5px;
+    padding: 0 0 10px 10px; }
 
 .total__{width: 100%; height: 70px;}
 
-.checkTerm{width: 100%; 
-    height: auto; 
+.checkTerm{width: 100%;
+    height: auto;
     position: relative; align-items: center;
     display: flex;
     flex-grow: 1;}
@@ -189,7 +188,7 @@ input[type="checkbox"] {
 .termList .checkTerm > label {border:none;}
 
 textarea{display: block; width: 100%; height: 150px; padding-bottom: 10px;
-		font-size: 15px; box-sizing: border-box;}
+    font-size: 15px; box-sizing: border-box;}
 
 .checkTerm .icon-before-check{
     font-size: 24px;
@@ -200,5 +199,3 @@ textarea{display: block; width: 100%; height: 150px; padding-bottom: 10px;
     font-size: 24px;
     color: #333;
 }
-
-

@@ -1,11 +1,10 @@
-
 #qnaView{
 	margin: 0;
-  	padding: 0;
+	padding: 0;
 }
 
 section {
-	width: 100%; min-height: 1200px; background-color: #FAF7F0; 
+	width: 100%; min-height: 1200px; background-color: #FAF7F0;
 }
 
 #blank{
@@ -14,48 +13,48 @@ section {
 
 #main {
 	display: block;
-	position: relative; width: 80%;  margin: 0 auto; 
-    padding-top:40px; 
-    padding-bottom:100px;
+	position: relative; width: 80%;  margin: 0 auto;
+	padding-top:40px;
+	padding-bottom:100px;
 }
 h1 {
-  position: relative;
-  margin-top: 30px;
-  margin-bottom: 0;
-  font-size: 40px;
-  font-weight: 650;
-  text-align: center;
+	position: relative;
+	margin-top: 30px;
+	margin-bottom: 0;
+	font-size: 40px;
+	font-weight: 650;
+	text-align: center;
 }
 
 table {
-  position: relative;
-  width: 100%;
-  margin-top: 70px;
-  margin-left: auto;
-  margin-right: auto;
-  line-height: 40px;
-  border-collapse: collapse;
-  box-sizing: border-box;
+	position: relative;
+	width: 100%;
+	margin-top: 70px;
+	margin-left: auto;
+	margin-right: auto;
+	line-height: 40px;
+	border-collapse: collapse;
+	box-sizing: border-box;
 }
 
 th {
-  border: 2px solid black;
-  text-align: left;
+	border: 2px solid black;
+	text-align: left;
 }
 
 td {
-  padding: 5px 0 5px 20px;
-  border: 1px solid silver;
+	padding: 5px 0 5px 20px;
+	border: 1px solid silver;
 }
 
 td {
-  text-align: left;
-  border-left: hidden;
-  border-right: hidden;
+	text-align: left;
+	border-left: hidden;
+	border-right: hidden;
 }
 
 #title > th {
-	font-weight: 650; background-color: black; 
+	font-weight: 650; background-color: black;
 	border-bottom: 2px solid black;
 	color: white;
 	padding: 10px 0 10px 20px;
@@ -67,55 +66,55 @@ td {
 }
 
 #bdate {
-	background-color: black; color: white; 
+	background-color: black; color: white;
 	padding-left: 45px; font-weight: 650;
 }
 #bhit {
-	background-color: black; color: white; 
+	background-color: black; color: white;
 	padding-left: 50px; font-weight: 650;
 }
 
 
 .article {
-  padding: 20px 20px;
+	padding: 20px 20px;
 }
 
 .separator {
-  padding: 0 20px 0 20px;
-  color: #e0e0e0;
+	padding: 0 20px 0 20px;
+	color: #e0e0e0;
 }
 
 
-.allList { 
-	position: relative; 
+.allList {
+	position: relative;
 	right: 25px;
 	float: right;
 	display: flex; width: 375px;
 }
-.allList2 { 
-	position: relative;  
+.allList2 {
+	position: relative;
 	right: -130px;
 	float: right;
 	display: flex; width: 260px;
 }
 
 .list {
-  float: right;
-  width: 120px;
-  line-height: 50px;
+	float: right;
+	width: 120px;
+	line-height: 50px;
 
-  margin: 30px 15px 10px 0;
-  background-color: black;
-  border: 2px black solid;
+	margin: 30px 15px 10px 0;
+	background-color: black;
+	border: 2px black solid;
 }
 
-.list > a { 
-	display: block; 
+.list > a {
+	display: block;
 	width: 120px;
 	color: white;
 	font-weight: 600;
 	text-align: center;
-	
+
 }
 
 /*댓글 작성하는 부분*/
@@ -123,7 +122,7 @@ td {
 #rFrm { width: 100%; padding: 15px 0px 0px 0px; display: flex;}
 
 .writeReply{
-	padding-top : 50px; 
+	padding-top : 50px;
 	position: relative; top: 70px;
 }
 
@@ -162,44 +161,44 @@ button[type="submit"]{
 }
 
 #nickname{
-	width: 85%; 
+	width: 85%;
 	height: 25px;
 }
 
 #nickname > span{
 	font-size: 16px; font-weight: 600; text-align: left;
 }
-.replyList { 
+.replyList {
 	position: relative;
 	float: right;
-	display: flex; width: 150px;
-	padding-left: 30px;
-	padding-top: 5px; 
+	display: flex; width: 75px;
+	padding-left: 120px;
+	padding-top: 5px;
 }
 button[type="button"] {
-  float: right;
-  width: 70px;
-  line-height: 30px;
-  margin: 0px 7px 5px 0;
-  background-color: #5C5C5C;
-  border: 1px solid #5C5C5C;
-  color: white;
-  font-weight: 600;
-  text-align: center;
-  font-size: 11px;
-  cursor: pointer;
+	float: right;
+	width: 70px;
+	line-height: 30px;
+	margin: 0px 7px 5px 0;
+	background-color: #5C5C5C;
+	border: 1px solid #5C5C5C;
+	color: white;
+	font-weight: 600;
+	text-align: center;
+	font-size: 11px;
+	cursor: pointer;
 }
 
 
 #content {
-	width: 100%; 
+	width: 100%;
 	min-height: 40px;
 	position: relative;
 	font-size: 15px;
 }
 
 #cdate {
-	width: 100%; 
+	width: 100%;
 	height: 30px;
 	position: relative;
 	font-size: 12px;
@@ -210,6 +209,3 @@ button[type="button"] {
 	text-decoration: none;
 	color:black;
 }
-
-
-

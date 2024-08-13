@@ -4,7 +4,8 @@
 }
 
 section {
-	width: 100%; min-height: 1000px; background-color: #FAF7F0;
+	width: 100%; min-height: 1000px; background-color: #FAF7F0; height: auto;
+	padding-bottom: 50px;
 }
 
 #blank{
@@ -15,7 +16,7 @@ section {
 	position: relative; width: 80%;  margin: 0 auto;
 	padding-top:40px;
 	padding-bottom:100px;
-	height:550px;
+	box-sizing: border-box;
 }
 h1 {
 	position: relative;
