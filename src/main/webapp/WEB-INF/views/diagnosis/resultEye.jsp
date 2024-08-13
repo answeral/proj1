@@ -81,7 +81,7 @@
 <section>
 	<div id="blank"></div>
 	<div class="box1">
-		<h2 id="heading">${userId}님의 반려동물 안구진단</h2>
+		<h2 id="heading">${sessionName}님의 반려동물 안구진단</h2>
 		<div id="content-container">
 			<div id="prod-img">
 	<%--			<img src="/Users/igyuwon/upload/${param.file}" alt="Uploaded Pet Image" width="600" height="400">--%>
@@ -89,7 +89,7 @@
 			</div>
 			<div id="result">
 				<h2 class="resultTitle">진단 결과</h2>
-				<p class="resultText">‘${userId} 님의 반려견 ${petName}(강아지 이름)의 의심 질환은 <span>‘${disease}’</span>입니다.</p>
+				<p class="resultText">‘${sessionName} 님의 반려견 ${petName}(강아지 이름)의 의심 질환은 <span>‘${disease}’</span>입니다.</p>
 				<div class="chart">
 				<p class="resultText" id="percentage">확률: <span>${probability * 100}%</span></p>
 				<canvas id="probabilityChart"></canvas>
