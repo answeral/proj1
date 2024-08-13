@@ -241,19 +241,19 @@ public class PController {
 	public String byeMem() {
 		return "mypage/byeMem";
 	}
-	
+
 	@RequestMapping("/mypage/byeMem")
 	public String byeMem(String id,String name,String genderC, String content) {
-		
-		//happymem 회원정보 삭제
-		memberService.deleteMem(id,name);
-		
-		//탈퇴 목록에 추가(byemem에 insert)
-		byememSerivce.byeMem(id,name,genderC,content);
-		
+
 		//로컬서버에서만 섹션 종료
 		session.invalidate();
-		
+
+		//happymem 회원정보 삭제
+		memberService.deleteMem(id,name);
+
+		//탈퇴 목록에 추가(byemem에 insert)
+		byememSerivce.byeMem(id,name,genderC,content);
+
 		return "redirect:/"; //메인페이지로 이동
 	}
 
