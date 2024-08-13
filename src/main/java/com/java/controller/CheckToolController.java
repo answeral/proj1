@@ -178,14 +178,14 @@ public class CheckToolController {
 		String userId = (String) session.getAttribute("sessionId");
 		//System.out.println("sessionId : "+userId);
 
-		if (userId != null) {
+		if (userId == null) {
 			System.out.println("로그인이 안되어있습니다.");
 			List<PetDiagnosisDto> diagnosisHistory = pdService.getDiagnosisHistoryByUserId(userId);
 			System.out.println("Number of diagnosis records found: " + diagnosisHistory.size());
 			
 			model.addAttribute("diagnosisHistory", diagnosisHistory);
 
-			return "redirect:/login/login";
+			return "/login/login";
 		}
 
 		return "diagnosis/CheckTool";
