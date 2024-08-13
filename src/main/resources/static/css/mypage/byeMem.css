@@ -1,38 +1,37 @@
 @charset "UTF-8";
 
-#findForm{height: 1100px;}       
-section{position: relative; top:100px; left:0; height:100%; 
-	background-color: #FAF7F0; flex:1;}
+section{position: relative; top:100px; left:0; height:auto;
+    background-color: #FAF7F0; flex:1;}
 .subbanner { position: relative; width: 100%; height: 300px; background: url('/image/back2.jpg') no-repeat 0 -750px;
-			background-size: cover; }
-.main{position: relative; width: 1100px; height:800px; margin: 0 auto; 
-	  padding-top:60px; box-sizing: border-box;}
+    background-size: cover; }
+.main{position: relative; width: 1100px; height:800px; margin: 0 auto;
+    padding-top:60px; box-sizing: border-box;}
 .main > h2{ font-size: 35px; color: #342F2F; text-align: center;
-            font-family: Roboto;
-            font-optical-sizing: auto;
-            font-weight: 550;
-            font-style: normal; }
+    font-family: Roboto;
+    font-optical-sizing: auto;
+    font-weight: 550;
+    font-style: normal; }
 
-form > h4{ width : 1100px; height :  36px; color: #333; 
-			font-size: 23px;
-            font-weight: 600;
-            box-sizing: border-box;
-            margin : 0 auto; margin-bottom: 10px;
-            padding: 0 0 10px 10px; }
+form > h4{ width : 1100px; height :  36px; color: #333;
+    font-size: 23px;
+    font-weight: 600;
+    box-sizing: border-box;
+    margin : 0 auto; margin-bottom: 10px;
+    padding: 0 0 10px 10px; }
 h4 > span { font-size: 13px; color: #555;}
 form{margin-top: 45px; margin-bottom: 30px;}
 form > button{ margin-top: 14px; width:100%; height: 55px; background: #342F2F; color: white; font-size: 18px;
-            font-weight: bold; border: none; }
+    font-weight: bold; border: none; }
 
 .fieldset_class{
-	    width: 1100px;
-	    font-size: 15px;
-	    margin: 0 auto;
-	    border-top: 1px solid rgb(209, 209, 209);
-	    border-left: none;
-	    border-right: none;
-	    border-bottom: none;
-	    margin-bottom: 15px;
+    width: 1100px;
+    font-size: 15px;
+    margin: 0 auto;
+    border-top: 1px solid rgb(209, 209, 209);
+    border-left: none;
+    border-right: none;
+    border-bottom: none;
+    margin-bottom: 15px;
 }
 .fieldset_class dl dt {
     float: left;
@@ -96,4 +95,3 @@ input[type="password"] { height: 28px;}
 #contentF select { width: 276px; height: 39px;}
 #contentF dt label { padding-top: 16px;}
 #contentF dt div { top: 13px; }
-

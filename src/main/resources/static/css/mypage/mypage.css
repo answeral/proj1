@@ -1,11 +1,11 @@
 #mypage{ margin: 0; padding: 0;}
 section{
-    width: 100%; min-height: 1000px; background-color: #FAF7F0;
+    width: 100%; min-height: 1000px; background-color: #FAF7F0; height:auto;
 }
 /* 서브 이미지 */
 #blank1{width: 100%; height: 100px;}
 #main{position: relative; width: 1000px;  margin: 0 auto;
-        padding-top:40px; box-sizing: border-box;
+    padding-top:40px; box-sizing: border-box;
 }
 /* 회원가입 문구 */
 #sub_top_area {
@@ -36,7 +36,7 @@ section{
     position: relative;
     width: 380px;
     height: 380px;
-	background-size: cover;
+    background-size: cover;
     border-radius: 50%;
     cursor: pointer;
 }
@@ -56,10 +56,10 @@ section{
 .hello{
     width: 430px;
     height: 50px;
-	color: black;
-	display: inline-block;
-	position: relative;
-	font-size: 23px;
+    color: black;
+    display: inline-block;
+    position: relative;
+    font-size: 23px;
     font-weight: 650;
     text-align: center;
 }
@@ -71,16 +71,16 @@ section{
     box-sizing: border-box;
     border-radius: 8px;
     display: inline-block;
-    
+
 }
 
 .infoB a{
-	display: block;
-	width: 140px;
+    display: block;
+    width: 140px;
     height: 33px;
-	color: white;
+    color: white;
     position: relative;
-	padding-top: 7px;
+    padding-top: 7px;
     font-size: 16px;
     font-weight: 650;
     text-align: center;
@@ -92,12 +92,12 @@ section{
     height: 45px;
     background: black;
     color: white;
-	display: inline-block;
+    display: inline-block;
     position: relative;
     margin: 0px auto 10px auto;
     font-size: 20px;
     font-weight: 650;
-	border-radius: 8px;
+    border-radius: 8px;
     text-align: center;
     padding-top: 7px;
     box-sizing: border-box;
@@ -105,7 +105,7 @@ section{
 }
 
 #checkPW_button, #changePw_button, #likelist_button{
-	top:20px;
+    top:20px;
 }
 table {
     margin: 10px auto;
@@ -121,7 +121,7 @@ th, td {
     text-align: center; /* 텍스트 가운데 정렬 */
 }
 th {
-	font-weight: 600;
+    font-weight: 600;
     background-color: #F2F2F2; /* 헤더 셀 배경색 */
 }
 /* 회원탈퇴버튼 -----------------------------------------------*/
@@ -144,54 +144,54 @@ th {
     cursor: pointer;
 }
 #blank3{
-	width: 100%; height: 100px;
+    width: 100%; height: 100px;
 }
 .petlist > h4{ width : 100%; height :  30px; color: #333;
-			font-size: 18px;
-            font-weight: 600;
-            box-sizing: border-box;
-            margin : 0 auto; margin-bottom: 10px;
-            padding: 0 0 10px 10px; }
+    font-size: 18px;
+    font-weight: 600;
+    box-sizing: border-box;
+    margin : 0 auto; margin-bottom: 10px;
+    padding: 0 0 10px 10px; }
 .petlist > h4 > span { font-size: 13px; color: #555;}
 .petlist{margin-top: 20px; margin-bottom: 30px;}
 .petlist > button{ margin-top: 5px; width:130px; height: 35px; background: #342F2F; color: white; font-size: 12px;
-            font-weight: 550; border: none; position: relative; }
+    font-weight: 550; border: none; position: relative; }
 #pfile{
-	position: relative;
+    position: relative;
     width: 200px;
     height: 220px;
-	background-size: cover;
-	border-radius: 5px;
-	
+    background-size: cover;
+    border-radius: 5px;
+
 }
 #pet {
-		display: inline-block;
-	    width: 550px;
-	    font-size: 15px;
-	    margin: 0 auto;
-	    margin-bottom: 15px;
-	    border-collapse: collapse;
-	    background-color: rgb(246, 246, 246);
+    display: inline-block;
+    width: 550px;
+    font-size: 15px;
+    margin: 0 auto;
+    margin-bottom: 15px;
+    border-collapse: collapse;
+    background-color: rgb(246, 246, 246);
 }
 #pet > tr,td {border : 1px solid rgb(209,209,209); height: 20px;}
 #blank4{width: 100%; height: 15px; }
 #plus {
-	margin-bottom: 0px;
-	margin-top: 0px;
-	border-radius: 5px;
+    margin-bottom: 0px;
+    margin-top: 0px;
+    border-radius: 5px;
 }
 #button { height: 23px;}
 #button > td { margin: 0 auto; padding: 3px 3px;}
 #uBtn, #pdBtn {
-	cursor: pointer;
-	width: 180px; height: 20px; background: black; color:white;
-	font-size: 12px; font-weight: 550;
+    cursor: pointer;
+    width: 180px; height: 20px; background: black; color:white;
+    font-size: 12px; font-weight: 550;
 }
 /*모달 페이지*/
 /* 모달 기본 스타일 */
 /* 모달 배경 */
 .modal {
-	position: absolute;
+    position: absolute;
     display: none; /* 숨겨진 상태 */
     position: fixed; /* 화면에 고정 */
     z-index: 1; /* 다른 요소 위에 표시 */
@@ -211,7 +211,7 @@ th {
     border-radius: 10px;
     box-shadow: 0 2px 3px 0 rgba(34,36,38,0.15);
     transform:translateY(-50%); /*가운데 정렬*/
-    }
+}
 #modal_image{
     position: relative;
     top: 50px;
@@ -220,17 +220,17 @@ th {
     position: relative;
     width: 380px;
     height: 380px;
-	background-size: cover;
+    background-size: cover;
     border-radius: 50%;
 }
 #modal_select{
     position: relative;
     top: 70px;
 }
-    
+
 #modal_select input{
-	position: relative;
-	width: 190px;
+    position: relative;
+    width: 190px;
     height: 30px;
     border-radius: 5%;
     margin: 20px;
@@ -240,8 +240,8 @@ th {
     top: 50px;
 }
 #modal_btn{
-	position: relative;
-	width: 180px; height: 40px; background: black; color:white;
-	font-size: 15px; font-weight: 550;
-	border-radius: 5%; top:40px;
+    position: relative;
+    width: 180px; height: 40px; background: black; color:white;
+    font-size: 15px; font-weight: 550;
+    border-radius: 5%; top:40px;
 }
