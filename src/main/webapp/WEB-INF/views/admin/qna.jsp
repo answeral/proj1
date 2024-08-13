@@ -18,7 +18,6 @@
 	<body id="admin">
 		<%@ include file="../top/adminTop.jsp" %>
 		<!-- ------------------------------------------------------------------------- -->
-		<%@ include file="../admin/subbanner.jsp" %>
 		<section>
 			<%@ include file="../admin/subbanner.jsp" %>
 			<div class="main">
