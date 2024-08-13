@@ -89,10 +89,8 @@ public class AdController {
 	        LocalDate endDate = LocalDate.now();
 	        LocalDate startDate = endDate.minusDays(7);
 	        
-	        InputStream serviceAccountStream = AdController.class.getClassLoader().getResourceAsStream("auth/happypawpetServiceaccount.json");
-            if (serviceAccountStream == null) {
-                throw new FileNotFoundException("Service account file not found in resources.");
-            }
+	        InputStream serviceAccountStream = new FileInputStream("C:\\Happypawpet\\Auth\\happypawpetServiceaccount.json");
+	        
             GoogleCredentials credentials = GoogleCredentials.fromStream(serviceAccountStream);
             
 	        BetaAnalyticsDataSettings settings = BetaAnalyticsDataSettings.newBuilder().setCredentialsProvider(FixedCredentialsProvider.create(credentials)).build();
