@@ -20,7 +20,7 @@
         <c:forEach var="history" items="${diagnosisHistory}">
             <li class="diagnosis-item">
                 <div class="diagnosis-header">
-                    <span class="diagnosis-id">반려동물 이름: ${history.pname}</span>
+                    <span class="diagnosis-id">${history.pname}</span>
                     <span class="diagnosis-date">${history.diagnosisdate}</span>
                 </div>
                 <div class="diagnosis-content">

@@ -180,13 +180,13 @@ public class CheckToolController {
 
 		if (userId == null) {
 			System.out.println("로그인이 안되어있습니다.");
-			List<PetDiagnosisDto> diagnosisHistory = pdService.getDiagnosisHistoryByUserId(userId);
-			System.out.println("Number of diagnosis records found: " + diagnosisHistory.size());
-			
-			model.addAttribute("diagnosisHistory", diagnosisHistory);
 
 			return "/login/login";
 		}
+		List<PetDiagnosisDto> diagnosisHistory = pdService.getDiagnosisHistoryByUserId(userId);
+		System.out.println("Number of diagnosis records found: " + diagnosisHistory.size());
+
+		model.addAttribute("diagnosisHistory", diagnosisHistory);
 
 		return "diagnosis/CheckTool";
 	}
