@@ -37,6 +37,7 @@ import com.java.dto.PetDto;
 import com.java.dto.board.BcmAgeDto;
 import com.java.dto.board.BcmDto;
 import com.java.dto.board.BoardCommentDto;
+import com.java.dto.diagnosis.PetDiagnosisDto;
 import com.java.dto.qna.QnaAnswerDto;
 import com.java.service.AbandonedService;
 import com.java.service.ByememService;
@@ -47,6 +48,7 @@ import com.java.service.board.BcmAgeService;
 import com.java.service.board.BcmService;
 import com.java.service.board.BoardCommentService;
 import com.java.service.board.BoardService;
+import com.java.service.dianosis.PetDiagnosisService;
 import com.java.service.qna.QnaAnswerService;
 import com.java.service.qna.QnaService;
 
@@ -64,72 +66,72 @@ public class AdController {
 	@Autowired BcmService bcmService;
 	@Autowired BcmAgeService bcmAgeService;
 	@Autowired AdoptService adoptService;
-	@Autowired
-	private AbandonedService abandonedService; // AnimalService 주입
+	@Autowired private AbandonedService abandonedService;
+	@Autowired PetDiagnosisService pdService;
 
-	
+
 	@RequestMapping("/admin/admin")  //관리자페이지 메인
 	public String admin() {
 
 		return "admin/admin";
 	}
-	
+
 	@GetMapping("/admin/analyticsTest")
 	@ResponseBody
-	 public List<Map<String, String>> getAnalyticsData() throws Exception {
+	public List<Map<String, String>> getAnalyticsData() throws Exception {
 
-			System.clearProperty("GOOGLE_APPLICATION_CREDENTIALS");
-	        System.setProperty("GOOGLE_APPLICATION_CREDENTIALS", "C:\\Happypawpet\\Auth\\happypawpetServiceaccount.json");
+		System.clearProperty("GOOGLE_APPLICATION_CREDENTIALS");
+		System.setProperty("GOOGLE_APPLICATION_CREDENTIALS", "C:\\Happypawpet\\Auth\\happypawpetServiceaccount.json");
 
-	        // GA4 Property ID 설정
-	        String propertyId = "453125441";
-	        
-	        List<Map<String, String>> analyticsDataList = new ArrayList<>();
-	        
-	        LocalDate endDate = LocalDate.now();
-	        LocalDate startDate = endDate.minusDays(7);
-	        
+		// GA4 Property ID 설정
+		String propertyId = "453125441";
+
+		List<Map<String, String>> analyticsDataList = new ArrayList<>();
+
+		LocalDate endDate = LocalDate.now();
+		LocalDate startDate = endDate.minusDays(7);
+
 //	        InputStream serviceAccountStream = new FileInputStream("C:\\Happypawpet\\Auth\\happypawpetServiceaccount.json");
-			InputStream serviceAccountStream = new FileInputStream("C:\\Users\\KOREAVC\\Desktop\\2조\\happypawpetServiceaccount.json");
-	        
-            GoogleCredentials credentials = GoogleCredentials.fromStream(serviceAccountStream);
-            
-	        BetaAnalyticsDataSettings settings = BetaAnalyticsDataSettings.newBuilder().setCredentialsProvider(FixedCredentialsProvider.create(credentials)).build();
-	        try (BetaAnalyticsDataClient analyticsData = BetaAnalyticsDataClient.create(settings)) {
-	        	
-	            RunReportRequest request = RunReportRequest.newBuilder()
-	                .setProperty("properties/" + propertyId)
-	                .addDateRanges(DateRange.newBuilder().setStartDate(startDate.toString()).setEndDate(endDate.toString()))
-	                .addDimensions(Dimension.newBuilder().setName("date"))
-	                .addMetrics(Metric.newBuilder().setName("active7DayUsers"))
-	                .addMetrics(Metric.newBuilder().setName("averageSessionDuration"))
-	                .addMetrics(Metric.newBuilder().setName("newUsers"))
-	                .addMetrics(Metric.newBuilder().setName("screenPageViews"))
-	                .addOrderBys(OrderBy.newBuilder()
-	                        .setDimension(OrderBy.DimensionOrderBy.newBuilder()
-	                            .setDimensionName("date")
-	                            .setOrderType(OrderBy.DimensionOrderBy.OrderType.ALPHANUMERIC)
-	                        )
-	                        .setDesc(false)
-	                    )
-	                .build();
+		InputStream serviceAccountStream = new FileInputStream("C:\\Users\\KOREAVC\\Desktop\\2조\\happypawpetServiceaccount.json");
 
-	            RunReportResponse response = analyticsData.runReport(request);
+		GoogleCredentials credentials = GoogleCredentials.fromStream(serviceAccountStream);
 
-	            for (Row row : response.getRowsList()) {
-	            	Map<String, String> data = new HashMap<>();
-	            	data.put("date", row.getDimensionValues(0).getValue());
-	                data.put("active7DayUsers", row.getMetricValues(0).getValue());
-	                data.put("averageSessionDuration", row.getMetricValues(1).getValue());
-	                data.put("newUsers", row.getMetricValues(2).getValue());
-	                data.put("screenPageViews", row.getMetricValues(3).getValue());
-	                analyticsDataList.add(data);
-	            }
-	            
-	        }
-	        return analyticsDataList;
-	    }
-	
+		BetaAnalyticsDataSettings settings = BetaAnalyticsDataSettings.newBuilder().setCredentialsProvider(FixedCredentialsProvider.create(credentials)).build();
+		try (BetaAnalyticsDataClient analyticsData = BetaAnalyticsDataClient.create(settings)) {
+
+			RunReportRequest request = RunReportRequest.newBuilder()
+					.setProperty("properties/" + propertyId)
+					.addDateRanges(DateRange.newBuilder().setStartDate(startDate.toString()).setEndDate(endDate.toString()))
+					.addDimensions(Dimension.newBuilder().setName("date"))
+					.addMetrics(Metric.newBuilder().setName("active7DayUsers"))
+					.addMetrics(Metric.newBuilder().setName("averageSessionDuration"))
+					.addMetrics(Metric.newBuilder().setName("newUsers"))
+					.addMetrics(Metric.newBuilder().setName("screenPageViews"))
+					.addOrderBys(OrderBy.newBuilder()
+							.setDimension(OrderBy.DimensionOrderBy.newBuilder()
+									.setDimensionName("date")
+									.setOrderType(OrderBy.DimensionOrderBy.OrderType.ALPHANUMERIC)
+							)
+							.setDesc(false)
+					)
+					.build();
+
+			RunReportResponse response = analyticsData.runReport(request);
+
+			for (Row row : response.getRowsList()) {
+				Map<String, String> data = new HashMap<>();
+				data.put("date", row.getDimensionValues(0).getValue());
+				data.put("active7DayUsers", row.getMetricValues(0).getValue());
+				data.put("averageSessionDuration", row.getMetricValues(1).getValue());
+				data.put("newUsers", row.getMetricValues(2).getValue());
+				data.put("screenPageViews", row.getMetricValues(3).getValue());
+				analyticsDataList.add(data);
+			}
+
+		}
+		return analyticsDataList;
+	}
+
 	//-----------------------------------------------------------------------------------------
 	//회원관리
 	@GetMapping("/admin/member") //관리자페이지-회원전체보기
@@ -263,20 +265,20 @@ public class AdController {
 		return mv;
 	}
 	//-----------------------------------------------------------------------------------------
-	
+
 	@RequestMapping("/admin/boardDetail") //관리자페이지 - 공지사항관리
 	public ModelAndView boardDetail() {
-		
+
 		ArrayList<BoardCommentDto> bclist = bcService.boardCommentList();
 		ArrayList<BoardCommentDto> rlist = bcService.qhitRank();
 		ArrayList<BoardCommentDto> clist = bcService.qcommentRank();
-		
+
 		ModelAndView mv = new ModelAndView();
 		mv.addObject("bclist",bclist);
 		mv.addObject("rlist",rlist);
 		mv.addObject("clist",clist);
 		mv.setViewName("admin/boardDetail");
-		
+
 		return mv;
 	}
 
@@ -369,18 +371,30 @@ public class AdController {
 	}
 	//------------------------------------------------------------------------------------------
 	//adoption
-	@RequestMapping("/admin/adoption") //QnA 게시판 전체보기
+	@RequestMapping("/admin/adoption") //입양후기 게시판
 	public ModelAndView adoption() {
-		
+
 		ArrayList<AdoptDto> adlist = adoptService.adoptCommuList();
-		
+
 		ModelAndView mv = new ModelAndView();
 		mv.addObject("adlist",adlist);
 		mv.setViewName("admin/adoption");
-		
-		
+
+
 		return mv;
 	}
+	//------------------------------------------------------------------------------------------
+	//diagnosis
+	@GetMapping("/admin/eyediagnosis") //진단내역 - 안구
+	public ModelAndView eyediagnosis() {
 
+		ArrayList<PetDiagnosisDto> diagnosisHistory = pdService.selectList();
+
+		ModelAndView mv = new ModelAndView();
+		mv.addObject("diagnosisHistory",diagnosisHistory);
+		mv.setViewName("admin/eyediagnosis");
+
+		return mv;
+	}
 }
 

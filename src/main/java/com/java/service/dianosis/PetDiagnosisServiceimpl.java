@@ -6,6 +6,7 @@ import org.springframework.stereotype.Service;
 import com.java.dao.PetDiagnosisDao;
 import com.java.dto.diagnosis.PetDiagnosisDto;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Service
@@ -23,6 +24,14 @@ public class PetDiagnosisServiceimpl implements PetDiagnosisService {
 	@Override
 	public List<PetDiagnosisDto> getDiagnosisHistoryByUserId(String userId) {
 		return pdDao.findDiagnosisHistoryByUserId(userId);
+	}
+
+	@Override
+	public ArrayList<PetDiagnosisDto> selectList() {
+
+		ArrayList<PetDiagnosisDto> diagnosisHistory = pdDao.selectList();
+
+		return diagnosisHistory;
 	}
 
 }

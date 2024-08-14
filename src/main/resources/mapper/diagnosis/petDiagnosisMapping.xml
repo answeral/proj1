@@ -75,5 +75,16 @@
 		ORDER BY
 		diagnosisdate DESC
 	</select>
+	<!-- 관리자페이지 진단내역 조회 -->
+	<select id="selectList" resultType="com.java.dto.diagnosis.PetDiagnosisDto">
+		select
+		diagnosisid AS dno,
+		id,
+		petname AS pname,
+		diagnosisdate,
+		diseasetype AS condition,
+		additionalnotes
+		from diagnosishistory order by diagnosisdate desc
+	</select>
 
 </mapper>

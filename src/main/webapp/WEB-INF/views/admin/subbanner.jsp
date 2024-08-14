@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+		 pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
 <%@taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn" %>
@@ -7,11 +7,11 @@
 <script src="http://code.jquery.com/jquery-latest.min.js"></script>
 <script>
 	$(document).ready(function(){
-	    $("li[id^='s0']").click(function(){
-	        $("div[id^='sub']").css("display","none"); // 모든 섹션 숨기기
-	        var target = $(this).attr("id").replace("s0", "sub");
-	        $("#" + target).css("display","block"); // 클릭된 버튼과 연결된 섹션만 표시
-	    });
+		$("li[id^='s0']").click(function(){
+			$("div[id^='sub']").css("display","none"); // 모든 섹션 숨기기
+			var target = $(this).attr("id").replace("s0", "sub");
+			$("#" + target).css("display","block"); // 클릭된 버튼과 연결된 섹션만 표시
+		});
 	});
 </script>
 
@@ -44,7 +44,7 @@
 			</div>
 			<div class="sub" id="sub2">
 				<ul class="subcontent">
-					<li><a href="#" class="sub_link">안구질환</a></li>
+					<li><a href="/admin/eyediagnosis" class="sub_link">안구질환</a></li>
 					<li><a href="#" class="sub_link">피부질환</a></li>
 				</ul>
 			</div>
