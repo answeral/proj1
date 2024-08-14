@@ -77,10 +77,10 @@
 			      <tr>
 			      	<c:choose>
 				      	<c:when test="${bDto.topchk == 2 }">
-				        	<td><span class="table-Must">필독</span></td>
+				        	<td><span class="table-Must">MUST</span></td>
 				        </c:when>
 				      	<c:when test="${bDto.topchk == 1 }">
-				        	<td><span class="table-notice">공지</span></td>
+				        	<td><span class="table-notice">NOTICE</span></td>
 				        </c:when>
 				        <c:otherwise>
 				        	<td><span class="table-normal">${bDto.bno }</span></td>
