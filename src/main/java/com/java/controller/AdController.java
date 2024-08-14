@@ -91,8 +91,8 @@ public class AdController {
 		LocalDate endDate = LocalDate.now();
 		LocalDate startDate = endDate.minusDays(7);
 
-//	        InputStream serviceAccountStream = new FileInputStream("C:\\Happypawpet\\Auth\\happypawpetServiceaccount.json");
-		InputStream serviceAccountStream = new FileInputStream("C:\\Users\\KOREAVC\\Desktop\\2조\\happypawpetServiceaccount.json");
+        InputStream serviceAccountStream = new FileInputStream("C:\\Happypawpet\\Auth\\happypawpetServiceaccount.json");
+//		InputStream serviceAccountStream = new FileInputStream("C:\\Users\\KOREAVC\\Desktop\\2조\\happypawpetServiceaccount.json");
 
 		GoogleCredentials credentials = GoogleCredentials.fromStream(serviceAccountStream);
 

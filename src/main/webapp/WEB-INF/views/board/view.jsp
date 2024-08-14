@@ -108,12 +108,14 @@
 		</c:choose>
 		<!-- --------------------------------------------------------------------------------------- -->
 		<div class="writeReply">
-			<form action="/board/writeReply" name="rFrm" id="rFrm" method="post">
-				<input type="hidden" name="id" value="${sessionId }">
-				<input type="hidden" name="bno" value="${map.bDto.bno }">
-				<input type="text" name="ccontent" required>
-				<button type="submit" id="send">작성완료</button>
-			</form>
+			<c:if test="${sessionId !=null }">
+				<form action="/board/writeReply" name="rFrm" id="rFrm" method="post">
+					<input type="hidden" name="id" value="${sessionId }">
+					<input type="hidden" name="bno" value="${map.bDto.bno }">
+					<input type="text" name="ccontent" required>
+					<button type="submit" id="send">작성완료</button>
+				</form>
+			</c:if>
 			<!-- 댓글 개수 체크-->
 			<c:choose>
 				<c:when test="${clist.size() == 0 }">
