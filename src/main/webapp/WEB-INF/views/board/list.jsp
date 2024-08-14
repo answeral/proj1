@@ -77,10 +77,10 @@
 			      <tr>
 			      	<c:choose>
 				      	<c:when test="${bDto.topchk == 2 }">
-				        	<td><span class="table-Must">필독</span></td>
+				        	<td><span class="table-Must">MUST</span></td>
 				        </c:when>
 				      	<c:when test="${bDto.topchk == 1 }">
-				        	<td><span class="table-notice">공지</span></td>
+				        	<td><span class="table-notice">NOTICE</span></td>
 				        </c:when>
 				        <c:otherwise>
 				        	<td><span class="table-normal">${bDto.bno }</span></td>
@@ -139,14 +139,9 @@
 		    </ul>
 		    <!-- ----------------------------------------------------------- -->
 			<div id="blank"></div>
-			<c:choose>
-			    <c:when test="${sessionId == 'admin01'}">
-			    	<div class="write"><a href="/board/write" onclick="wBtn">쓰기</a></div>
-			    </c:when>
-			    <c:otherwise>
-			    	<div class="write" style="display: none;"><a href="#" onclick="wBtn">쓰기</a></div>
-	            </c:otherwise>
-			</c:choose>
+			<c:if test="${sessionId == 'admin01'}">
+		    	<div class="write"><a href="/board/write" onclick="wBtn">쓰기</a></div>
+			</c:if>
 		</div>
 	 </section>
 	 <!-- ----------------------------------------------------------------- -->
