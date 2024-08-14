@@ -17,53 +17,55 @@
     <link rel="stylesheet" href="/css/top.css">
     <link rel="stylesheet" href="/css/adoption/Cardlist.css">
     <link rel="stylesheet" href="/css/footer.css">
-    <script>
-	    function onBtn(event,id,bno) {
-	    	if(${sessionId != null}){
-		    	console.log("id value:", id);
-		    	console.log("bno value:", bno);
-		    	const likeElement = $(event.target).closest('.like');
-		        
-		        likeElement.find('.off').css("display", "none");
-		        likeElement.find('.on').css("display", "inline-block");
-		        
-		        $.ajax({
-		            type: 'POST',
-		            url: '/adoption/likeOn',
-		            dataType: 'text',
-		            data: { "id": id,"bno": bno },
-		            success: function() { 
-		            },
-		            error: function(xhr, status, error) { 
-		            }
-		        });
-	    		
-	    	}else{
-	    		alert("로그인 후 이용가능합니다.");
-	    		return false;
-	    	}
-	    	
-	    }
-	
-	    function offBtn(event,id,bno) {
-	    	console.log("bno value:", bno);
-	    	const likeElement = $(event.target).closest('.like');
-	        
-	        likeElement.find('.on').css("display", "none");
-	        likeElement.find('.off').css("display", "inline-block");
-	        
-	        $.ajax({
-	            type: 'POST',
-	            url: '/adoption/likeOff',
-	            dataType: 'text',
-	            data: { "id": id,"bno": bno },
-	            success: function() { 
-	            },
-	            error: function(xhr, status, error) { 
-	            }
-	        });
-	    }
-    </script>
+	<script>
+		function onBtn(event, id, bno) {
+			if (id != null) {
+				const likeElement = $(event.target).closest('.like');
+				const likeCountElement = likeElement.find('p');
+
+				likeElement.find('.off').css("display", "none");
+				likeElement.find('.on').css("display", "inline-block");
+
+				$.ajax({
+					type: 'POST',
+					url: '/adoption/likeOn',
+					dataType: 'json',
+					data: { "id": id, "bno": parseInt(bno) },
+					success: function(data) {
+						likeCountElement.text(data.likeCount);
+					},
+					error: function(xhr, status, error) {
+						console.error("좋아요 에러:", error);
+					}
+				});
+			} else {
+				alert("로그인 후 이용가능합니다.");
+				return false;
+			}
+		}
+
+		function offBtn(event, id, bno) {
+			const likeElement = $(event.target).closest('.like');
+			const likeCountElement = likeElement.find('p');
+
+			likeElement.find('.on').css("display", "none");
+			likeElement.find('.off').css("display", "inline-block");
+
+			$.ajax({
+				type: 'POST',
+				url: '/adoption/likeOff',
+				dataType: 'json',
+				data: { "id": id, "bno": parseInt(bno) },
+				success: function(data) {
+					likeCountElement.text(data.likeCount);
+				},
+				error: function(xhr, status, error) {
+					console.error("좋아요 취소 에러:", error);
+				}
+			});
+		}
+
+	</script>
 </head>
 <body>
 	<%@ include file="../top/top.jsp" %>
@@ -123,7 +125,7 @@
 	                    		<p>${likeCountMap[bDto.bno]}</p><span><i class="fa-solid fa-heart" style="color: #ef4e4e;"></i></span>
 	                    	</div>
 	                    </div>
-		            </div>
+					</div>
 		        </c:forEach>
 			</div>
 	        <!-- ------------------------------------------------------------------------------------ -->
@@ -135,7 +137,7 @@
 			    <c:if test="${map.page==map.startPage}">
 			    	<li class="first"></li>
 			    </c:if>
-			   
+
 			    <!-- prev -->
 			    <c:if test = "${map.page<=1 }">
 			      <li class="prev"></li>
@@ -143,7 +145,7 @@
 			    <c:if test = "${map.page>1 }">
 			    	<li class="prev"><a href="Cardlist?page=${map.page-1}&category=${map.category}&searchWord=${map.searchWord}"></a></li>
 			    </c:if>
-			   
+
 			    <c:forEach var="i" begin="${map.startPage }" end="${map.endPage }" step="1">
 			    	<c:if test="${map.page == i}">
 			    		<li class="myNum num"><div>${i}</div></li>
@@ -152,7 +154,7 @@
 			    	 	<li class="num"><a href="Cardlist?page=${i}&category=${map.category}&searchWord=${map.searchWord}">${i}</a></li>
 			    	 </c:if>
 			    </c:forEach>
-			   
+
 			    <!-- next 부분 -->
 			    <c:if test="${map.page<map.maxPage}">
 			    	<li class="next"><a href="Cardlist?page=${map.page+1}&category=${map.category}&searchWord=${map.searchWord}"></a></li>
@@ -160,7 +162,7 @@
 			    <c:if test="${map.page>=map.maxPage}">
 			    	<li class="next"></li>
 			    </c:if>
-			   
+
 			    <!-- last -->
 		 		<c:if test="${map.page<map.maxPage}">
 			    	<li class="last"><a href="Cardlist?page=${map.maxPage}&category=${map.category}&searchWord=${map.searchWord}"></a></li>

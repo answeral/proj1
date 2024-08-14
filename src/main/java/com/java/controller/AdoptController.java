@@ -9,16 +9,11 @@ import java.util.Set;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RequestPart;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.java.dto.AdoptDto;
-import com.java.dto.AdoptLikelistDto;
 import com.java.service.adopt.AdoptLikelistService;
 import com.java.service.adopt.AdoptService;
 
@@ -30,33 +25,33 @@ public class AdoptController {
 	@Autowired AdoptService adoptService; //IOC컨테이너에서 주입받음. 
 	@Autowired AdoptLikelistService adlikelistService;
 	@Autowired HttpSession session;
-	
-	
+
+
 	@RequestMapping("/adoption/Cardlist") //게시판리스트
 	public ModelAndView Cardlist(@RequestParam(defaultValue = "1") int page,
-			String category,String searchWord) {	
+			String category,String searchWord) {
 		//리스트,검색 포함
 		Map<String, Object> map = adoptService.selectList(page,category,searchWord);
-		
+
 		// 사용자가 좋아요를 누른 게시글 리스트를 저장할 Set
 		String id = null;
 	    if (session != null) { // 세션이 null이 아닌지 확인
 	        id = (String) session.getAttribute("sessionId");
 	    }
-		
+
 		System.out.println("controller id : "+id);
 	    Set<Integer> likedBnoSet = new HashSet<>();
-		
+
 		// 각 bno에 대한 좋아요 수를 저장할 Map
 	    Map<Integer, Integer> likeCountMap = new HashMap<>();
 
 	    // list 안의 각 bno 값을 추출하고, 각 bno에 대한 좋아요 수 조회
 	    ArrayList<AdoptDto> list = (ArrayList<AdoptDto>) map.get("list");
-	   
+
 	    for (AdoptDto adDto : list) {
 	        int likeCount = adlikelistService.selectLikeCountByBno(adDto.getBno());
 	        likeCountMap.put(adDto.getBno(), likeCount);
-	        
+
 	        // 사용자가 이 게시글에 좋아요를 눌렀는지 확인
 	        if (id != null){
 	        	boolean isLiked = adlikelistService.isLikedByUser(id, adDto.getBno());
@@ -65,7 +60,7 @@ public class AdoptController {
 	        	}
 	        }
 	    }
-		
+
 		ModelAndView mv = new ModelAndView();
 		mv.addObject("map",map);
 		mv.addObject("likedBnoSet",likedBnoSet);
@@ -73,28 +68,39 @@ public class AdoptController {
 		mv.setViewName("adoption/Cardlist");
 		return mv;
 	}//list
-	
-	@RequestMapping("/adoption/likeOn") //좋아요누르기
-	public void likeOn(@RequestParam("id") String id,@RequestParam("bno") int bno) {
-		//확인용
-		//System.out.println("controller id : "+id);
-		//System.out.println("controller bno : "+bno);
-		
-		adlikelistService.likeOn(id,bno);
-		
+
+	@RequestMapping("/adoption/likeOn") // 좋아요 누르기
+	@ResponseBody
+	public Map<String, Integer> likeOn(@RequestParam("id") String id, @RequestParam("bno") int bno) {
+		adlikelistService.likeOn(id, bno);
+
+		// Fetch the updated like count
+		int updatedLikeCount = adlikelistService.selectLikeCountByBno(bno);
+
+		// Return the updated like count in JSON format
+		Map<String, Integer> response = new HashMap<>();
+		response.put("likeCount", updatedLikeCount);
+
+		return response;
 	}
-	
-	@RequestMapping("/adoption/likeOff") //좋아요 취소
-	public void likeOff(@RequestParam("id") String id,@RequestParam("bno") int bno) {
-		//확인용
-		//System.out.println("controller id : "+id);
-		//System.out.println("controller bno : "+bno);
-		
-		adlikelistService.likeOff(id,bno);
-		
+
+	@RequestMapping("/adoption/likeOff") // 좋아요 취소
+	@ResponseBody
+	public Map<String, Integer> likeOff(@RequestParam("id") String id, @RequestParam("bno") int bno) {
+		adlikelistService.likeOff(id, bno);
+
+		// Fetch the updated like count
+		int updatedLikeCount = adlikelistService.selectLikeCountByBno(bno);
+
+		// Return the updated like count in JSON format
+		Map<String, Integer> response = new HashMap<>();
+		response.put("likeCount", updatedLikeCount);
+
+		return response;
 	}
-	
-	
+
+
+
 	@RequestMapping("/adoption/view") //뷰페이지
 	public ModelAndView view(AdoptDto adDto,@RequestParam(defaultValue = "1") int page) {
 		
