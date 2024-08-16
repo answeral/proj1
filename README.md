@@ -14,7 +14,15 @@
 </br>
 
 ## 🔑 Key Feature
-<img width="1728" alt="image" src="https://github.com/user-attachments/assets/3e19818b-1a18-4508-8c34-5c6d42b1b0fc">
+### 메인화면
+<img width="1728" alt="image" src="https://github.com/user-attachments/assets/3e19818b-1a18-4508-8c34-5c6d42b1b0fc"></br>
+### 진단
+<img width="1727" alt="스크린샷 2024-08-16 오후 12 48 46" src="https://github.com/user-attachments/assets/d380e553-41a6-4e10-a1c4-5436356df4dc"></br>
+### 응급처치
+<img width="1727" alt="스크린샷 2024-08-16 오후 12 49 09" src="https://github.com/user-attachments/assets/bf2d11e5-a480-47f0-82b6-9c2193487972"></br>
+### 입양공고
+<img width="1728" alt="스크린샷 2024-08-16 오후 12 49 27" src="https://github.com/user-attachments/assets/9ca1f071-24a8-4d2f-bc8b-b9e834c7fc20">
+
 
 </br>
 </br>
@@ -71,17 +79,8 @@
 |        |              |    |_ QnaDao.java
 |        |              |_ 📁 dto
 |        |              |    |_ 📁 board
-|        |              |    |    |_ BcmAgeDto.java
-|        |              |    |    |_ BcmDto.java
-|        |              |    |    |_ BoardCommentDto.java
-|        |              |    |    |_ BoardDto.java
-|        |              |    |    |_ CommentDto.java
 |        |              |    |_ 📁 diagnosis
-|        |              |    |    |_ PetDiagnosisDto.java
 |        |              |    |_ 📁 qna
-|        |              |    |    |_ AnswerDto.java
-|        |              |    |    |_ QnaAnswerDto.java
-|        |              |    |    |_ QnaDto.java
 |        |              |    |_ AbandonedDto.java
 |        |              |    |_ AdoptDto.java
 |        |              |    |_ AdoptLikelist.java
@@ -100,31 +99,9 @@
 |        |              |    |_ ProductDto.java
 |        |              |_ 📁 service
 |        |              |    |_ 📁 adopt
-|        |              |    |    |_ AdoptLikelistService.java
-|        |              |    |    |_ AdoptLikelistServiceImpl.java
-|        |              |    |    |_ AdoptService.java
-|        |              |    |    |_ AdoptServiceImpl.java
 |        |              |    |_ 📁 board
-|        |              |    |    |_ BcmAgeService.java
-|        |              |    |    |_ BcmAgeServiceImpl.java
-|        |              |    |    |_ BcmService.java
-|        |              |    |    |_ BcmServiceImpl.java
-|        |              |    |    |_ BoardCommentService.java
-|        |              |    |    |_ BoardCommentServiceImpl.java
-|        |              |    |    |_ BoardService.java
-|        |              |    |    |_ BoardServiceImpl.java
-|        |              |    |    |_ CommentService.java
-|        |              |    |    |_ CommentServiceImpl.java
 |        |              |    |_ 📁 diagnosis
-|        |              |    |    |_ PetDiagnosisService.java
-|        |              |    |    |_ PetDiagnosisServiceImpl.java
 |        |              |    |_ 📁 qna
-|        |              |    |    |_ AnswerService.java
-|        |              |    |    |_ AnswerServiceImpl.java
-|        |              |    |    |_ QnaAnswerService.java
-|        |              |    |    |_ QnaAnswerServiceImpl.java
-|        |              |    |    |_ QnaService.java
-|        |              |    |    |_ QnaServiceImpl.java
 |        |              |    |_ AbandonedService.java
 |        |              |    |_ AbandonedServiceImpl.java
 |        |              |    |_ AnalyticsService.java
@@ -178,70 +155,18 @@
 |        |    |_ 📁 static
 |        |    |    |_ 📁 css
 |        |    |    |    |_ 📁 admin
-|        |    |    |    |    |_ admin.css
-|        |    |    |    |    |_ adminAdoption.css
-|        |    |    |    |    |_ adminBoard.css
-|        |    |    |    |    |_ adminBoardDetail.css
-|        |    |    |    |    |_ adminMember.css
-|        |    |    |    |    |_ adminPet.css
-|        |    |    |    |    |_ adminQna.css
-|        |    |    |    |    |_ adminTop.css
-|        |    |    |    |    |_ boardComment.css
-|        |    |    |    |    |_ memDetail.css
-|        |    |    |    |    |_ subbanner.css
 |        |    |    |    |_ 📁 adoption
-|        |    |    |    |    |_ Adog_ex.css
-|        |    |    |    |    |_ animalList.css
-|        |    |    |    |    |_ Cardlist.css
-|        |    |    |    |    |_ view.css
-|        |    |    |    |    |_ write.css
 |        |    |    |    |_ 📁 board
-|        |    |    |    |    |_ answer.css
-|        |    |    |    |    |_ list.css
-|        |    |    |    |    |_ qnaList.css
-|        |    |    |    |    |_ qnaView.css
-|        |    |    |    |    |_ question.css
-|        |    |    |    |    |_ view.css
-|        |    |    |    |    |_ write.css
 |        |    |    |    |_ 📁 diagnosis
-|        |    |    |    |    |_ CheckTool.css
-|        |    |    |    |    |_ diagnosis.css
-|        |    |    |    |    |_ diagnosisHistory.css
-|        |    |    |    |    |_ dom.css
 |        |    |    |    |_ 📁 emergency
-|        |    |    |    |    |_ bootstrap.min.css
-|        |    |    |    |    |_ bootstrap-icons.css
-|        |    |    |    |    |_ content.css
-|        |    |    |    |    |_ modal.css
-|        |    |    |    |    |_ owl.carousel.min.css
-|        |    |    |    |    |_ owl.theme.default.min.css
 |        |    |    |    |_ 📁 login
-|        |    |    |    |    |_ findId.css
-|        |    |    |    |    |_ findPw.css
-|        |    |    |    |    |_ login.css
-|        |    |    |    |    |_ memberForm.css
-|        |    |    |    |    |_ welcome.css
 |        |    |    |    |_ 📁 mypage
-|        |    |    |    |    |_ byeMem.css
-|        |    |    |    |    |_ changePw.css
-|        |    |    |    |    |_ checkPw.css
-|        |    |    |    |    |_ dEdit.css
-|        |    |    |    |    |_ dogForm.css
-|        |    |    |    |    |_ likelist.css
-|        |    |    |    |    |_ mypage.css
-|        |    |    |    |    |_ pEdit.css
-|        |    |    |    |    |_ petEdit.css
-|        |    |    |    |    |_ petForm.css
 |        |    |    |    |_ footer.css
 |        |    |    |    |_ index.css
 |        |    |    |    |_ top.css
 |        |_ 📁 fonts
 |        |_ 📁 image
 |        |_ 📁 js
-|        |    |_ bootstrap.bundle.min.js
-|        |    |_ custom.js
-|        |    |_ jquery.min.js
-|        |    |_ owl.carousel.min.js
 |        |_ 📁 templates
 |        |_ application.properties
 |        |_ application-private.properties
@@ -249,67 +174,15 @@
 |        |_ 📁 WEB-INF
 |             |_ 📁 views
 |                  |_ 📁 admin
-|                  |    |_ admin.jsp
-|                  |    |_ adoption.jsp
-|                  |    |_ board.jsp
-|                  |    |_ boardComment.jsp
-|                  |    |_ boardDetail.jsp
-|                  |    |_ member.jsp
-|                  |    |_ memDetail.jsp
-|                  |    |_ pet.jsp
-|                  |    |_ qna.jsp
-|                  |    |_ subbanner.jsp
 |                  |_ 📁 adoption
-|                  |    |_ Adog_ex.jsp
-|                  |    |_ adopt_writing.jsp
-|                  |    |_ animalList.jsp
-|                  |    |_ Cardlist.jsp
-|                  |    |_ modify.jsp
-|                  |    |_ notice.jsp
-|                  |    |_ reply.jsp
-|                  |    |_ view.jsp
 |                  |_ 📁 board
-|                  |    |_ answer.jsp
-|                  |    |_ boardUpdate.jsp
-|                  |    |_ list.jsp
-|                  |    |_ qnaList.jsp
-|                  |    |_ qnaUpdate.jsp
-|                  |    |_ qnaView.jsp
-|                  |    |_ question.jsp
-|                  |    |_ view.jsp
-|                  |    |_ write.jsp
 |                  |_ 📁 conditions
-|                  |    |_ eyeCondition.jsp
-|                  |    |_ skinCondition.jsp
 |                  |_ 📁 diagnosis
-|                  |    |_ CheckTool.jsp
-|                  |    |_ diagnosis.jsp
-|                  |    |_ diagnosisHistory.jsp
-|                  |    |_ resultEye.jsp
-|                  |    |_ resultSkin.jsp
 |                  |_ 📁 emergency
-|                  |    |_ emergency.jsp
 |                  |_ 📁 footer
-|                  |    |_ footer.jsp
 |                  |_ 📁 login
-|                  |    |_ doLogin.jsp
-|                  |    |_ findId.jsp
-|                  |    |_ findPw.jsp
-|                  |    |_ login.jsp
-|                  |    |_ memberForm.jsp
-|                  |    |_ welcome.jsp
 |                  |_ 📁 mypage
-|                  |    |_ byeMem.jsp
-|                  |    |_ changePw.jsp
-|                  |    |_ checkPw.jsp
-|                  |    |_ likelist.jsp
-|                  |    |_ myPage.jsp
-|                  |    |_ pEdit.jsp
-|                  |    |_ petEdit.jsp
-|                  |    |_ petForm.jsp
 |                  |_ 📁 top
-|                       |_ adminTop.jsp
-|                       |_ top.jsp
 |                  |_ index.jsp
 📁 test
 
@@ -326,7 +199,8 @@
 </br>
 
 ## 💽 Database ERD
-<img width="602" alt="스크린샷 2024-02-02 오후 5 34 54" src="https://github.com/Team-Picle/Picle-Server/assets/101168694/7ebce724-8485-4a62-a5a5-cbf54ea9a623">
+<img width="1558" alt="스크린샷 2024-08-16 오후 12 45 45" src="https://github.com/user-attachments/assets/41233a36-da69-48e4-b76a-eba1d541b0dd">
+
 
 
 </br>
