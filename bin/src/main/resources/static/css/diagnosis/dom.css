@@ -1,0 +1,205 @@
+/* Normalize */
+body, ul, li {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    font-family: 'Noto Sans KR', 'Nanum Gothic', sans-serif, 'Inter'; /* Match with top.css */
+}
+
+/* Body and HTML styles */
+html, body {
+    height: 100%;
+    background-color: #FAF7F0; /* Light background */
+    color: #000000; /* Black text */
+}
+
+a{
+	color: black;
+}
+
+section {
+	padding-bottom: 50px;
+}
+/* Specific to the diagnosis section */
+
+#blank{
+	width: 100%; height: 100px;
+}
+
+.box1{
+	position: relative;
+	top: 50px;
+	background: white;
+	border-radius: 40px;
+	width: 70%;
+	margin: 0 auto;
+	padding: 30px 0px 70px 0px;
+}
+
+#heading {
+	position: relative;
+	top: 30px;
+    text-align: center;
+    margin: 30px auto 20px; /* Increased top margin */
+    font-size: 40px;
+	color: #333;
+}
+
+#content-container {
+	position: relative;
+	top: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 30px auto;
+    padding: 20px;
+    
+    
+}
+
+#prod-img {
+    margin-right: 100px;
+}
+
+#prod-img img{
+    border-radius: 15px;
+    box-shadow: 8px 8px 10px 2px rgba(0, 0, 0, 0.6); /* 경계 흐리게 */
+    
+}
+
+#result {
+	position: relative;
+	top: -100px;
+    text-align: left;
+    color: #000000; /* Ensure the text color is black */
+}
+
+.resultTitle {
+    font-size: 30px;
+    margin-bottom: 20px;
+    color: #000000;
+}
+
+.resultText {
+    font-size: 20px;
+    margin-bottom: 20px;
+}
+
+.chart{
+	display: flex;
+}
+
+#percentage{
+	width: 130px;
+	margin: 5px auto 15px auto;
+}
+
+
+.resultText span{
+	font-size: 23px;
+	font-weight: 550;
+}
+
+#probabilityChart{
+	width: 500px !important;
+	height: 50px !important;
+}
+
+
+/* Styling for the recommended products section */
+.subTitle {
+    font-size: 23px;
+    font-weight: 600;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+#information {
+	position: relative;
+	top: 50px;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    margin: 50px auto;
+    width: 80%;
+    text-align: center;
+}
+
+
+#information > div {
+    flex: 1;
+    margin: 20px;
+    max-width: 300px;
+}
+
+#information img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+#information ul {
+    padding: 0;
+    margin: 20px 0 0;
+}
+
+#information li {
+    margin-bottom: 10px;
+}
+
+.navyBtn {
+    background-color: #333;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 550;
+    transition: background-color 0.3s ease;
+    margin-top: 10px;
+}
+
+.navyBtn:hover {
+    background-color: #0056b3;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    #content-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    #prod-img {
+        margin: 0 0 20px 0;
+    }
+
+    #information {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    #information > div {
+        width: 80%;
+        max-width: none;
+    }
+
+    .resultTitle {
+        font-size: 25px;
+    }
+
+    .resultText {
+        font-size: 18px;
+    }
+
+    .subTitle {
+        font-size: 20px;
+    }
+}
+
+footer {
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}

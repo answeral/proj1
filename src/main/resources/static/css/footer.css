@@ -96,7 +96,7 @@ footer {
     box-shadow: 0 2px 3px 0 rgba(34,36,38,0.15); 
 }
 
-h2 {
+#h2 {
     padding-bottom: 10px;
     font-size: 26px;
     font-weight: 800;
@@ -104,11 +104,11 @@ h2 {
     letter-spacing: 1.5px;
 }
 
-#privacy_button, #terms_button{
+#p_button, #u_button{
     position: relative;
 }
 
-#privacy_mbtn, #terms_mbtn{
+#pBtn, #uBtn{
     background-color: #007bff;
     color: #fff;
     border: none;
@@ -119,12 +119,8 @@ h2 {
     transition: background-color 0.3s ease;
 }
 
-#privacy_mbtn:hover, #terms_mbtn:hover {
-    background-color: #0056b3;
-}
-
 /* 텍스트 영역 스타일 */
-#textarea {
+#text_modal {
     width: 400px;
     height: 425px;
     border: 1px solid #ccc;

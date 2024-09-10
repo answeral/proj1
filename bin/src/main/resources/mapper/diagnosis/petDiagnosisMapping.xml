@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+		PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+		"https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.java.dao.PetDiagnosisDao">
+	<!-- 진단 설문지 작성 저장 -->
+	<insert id="insertPetDiagnosisDB" parameterType="com.java.dto.diagnosis.PetDiagnosisDto">
+		INSERT INTO petdiagnosis (dno, id, pname, pbirth, page, psex, psurgery, pweight, pbreed, condition, pfile, diagnosisdate, eye1, eye2, eye3, eye4, eye5, eyecolor, skin1, skin2, skin3, skin4, skin5)
+		VALUES (
+		diag_seq.nextval,
+		#{id, jdbcType=VARCHAR},
+		#{pname, jdbcType=VARCHAR},
+		#{pbirth, jdbcType=DATE},
+		EXTRACT(year FROM sysdate) - EXTRACT(year FROM #{pbirth, jdbcType=DATE}),
+		#{psex, jdbcType=VARCHAR},
+		#{psurgery, jdbcType=VARCHAR},
+		#{pweight, jdbcType=INTEGER},
+		#{pbreed, jdbcType=VARCHAR},
+		#{condition, jdbcType=VARCHAR},
+		#{pfile, jdbcType=VARCHAR},
+		sysdate,
+		<choose>
+			<when test="condition == 'eye'">
+				#{eye1, jdbcType=INTEGER}, #{eye2, jdbcType=INTEGER}, #{eye3, jdbcType=INTEGER}, #{eye4, jdbcType=INTEGER}, #{eye5, jdbcType=INTEGER}, #{eyecolor, jdbcType=VARCHAR}, 0, 0, 0, 0, 0
+			</when>
+			<when test="condition == 'skin'">
+				0, 0, 0, 0, 0, 'none', #{skin1, jdbcType=INTEGER}, #{skin2, jdbcType=INTEGER}, #{skin3, jdbcType=INTEGER}, #{skin4, jdbcType=INTEGER}, #{skin5, jdbcType=INTEGER}
+			</when>
+			<otherwise>
+				0, 0, 0, 0, 0, 'none', 0, 0, 0, 0, 0
+			</otherwise>
+		</choose>
+		)
+	</insert>
+
+	<!-- 질병에 따른 상품 정보 조회 -->
+	<select id="findProductsByDiseaseAndType" resultType="map">
+		SELECT * FROM (
+		SELECT * FROM diagnose
+		WHERE disease = #{disease} AND type = '사료'
+		ORDER BY dbms_random.value
+		) WHERE ROWNUM = 1
+
+		UNION ALL
+
+		SELECT * FROM (
+		SELECT * FROM diagnose
+		WHERE disease = #{disease} AND type = '안약'
+		ORDER BY dbms_random.value
+		) WHERE ROWNUM = 1
+
+		UNION ALL
+
+		SELECT * FROM (
+		SELECT * FROM diagnose
+		WHERE disease = #{disease} AND type = '영양제'
+		ORDER BY dbms_random.value
+		) WHERE ROWNUM = 1
+	</select>
+
+	<!-- 사용자 ID를 기반으로 진단 이력 조회 -->
+	<select id="findDiagnosisHistoryByUserId" parameterType="string" resultType="com.java.dto.diagnosis.PetDiagnosisDto">
+		SELECT
+		diagnosisid AS dno,
+		id,
+		petname AS pname,
+		diagnosisdate,
+		diseasetype AS condition,
+		additionalnotes
+		FROM
+		diagnosishistory
+		WHERE
+		id = #{id}
+		ORDER BY
+		diagnosisdate DESC
+	</select>
+	<!-- 관리자페이지 진단내역 조회 -->
+	<select id="selectList" resultType="com.java.dto.diagnosis.PetDiagnosisDto">
+		select
+		diagnosisid AS dno,
+		id,
+		petname AS pname,
+		diagnosisdate,
+		diseasetype AS condition,
+		additionalnotes
+		from diagnosishistory order by diagnosisdate desc
+	</select>
+
+</mapper>

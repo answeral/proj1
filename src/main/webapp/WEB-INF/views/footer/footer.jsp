@@ -37,9 +37,9 @@
                     <div id="privacy-policy"><a onclick="open_privacy_pop()">개인정보처리방침</a></div>
                     <!-- modal 개인정보처리방침 시작 -->
                     <div class="privacy_modal">
-                        <div id="privacy-pop">
+                        <div id="privacy_pop">
                             <div id="h2"><h2>개인정보처리방침</h2></div>
-                            <textarea readonly style="width: 400px;">1. 수집하는 개인정보의 항목 및 수집 방법
+                            <textarea id="text_modal" readonly style="width: 400px;">1. 수집하는 개인정보의 항목 및 수집 방법
 
 (1)수집하는 개인정보 항목
 - 성명 , 아이디, 비밀번호
@@ -62,8 +62,8 @@
 - 계약 또는 청약철회 등에 관한 기록 : 5년
 - 소비자의 불만 또는 분쟁처리에 관한 기록 : 3년
 - 회원가입 탈퇴하거나 회원에서 제명된 경우 등에는 3개월 동안 재가입 방지를 위하여 식별정보를 보관합니다.</textarea>
-                            <div id="privacy_button">
-                                <button id="privacy_mbtn" onclick="close_privacy_button()">닫기</button>
+                            <div id="p_button">
+                                <button id="pBtn" onclick="close_privacy_button()">닫기</button>
                             </div>
                         </div>
                     </div>
@@ -73,7 +73,7 @@
                     <div class="terms_modal">
                         <div id="terms_pop">
                             <div id="h2"><h2>이용약관</h2></div>
-                            <textarea readonly style="width: 400px;">제1조(목적 등)
+                            <textarea id="text_modal" readonly style="width: 400px;">제1조(목적 등)
 ① HappyPawPet 인터넷 회원 약관(이하 "본 약관"이라 합니다)은 이용자가 HappyPawPet에서 제공하는 인터넷 관련 서비스(이하 "서비스"라 합니다)를 이용함에 있어 이용자와 HappyPawPet에 권리·의무 및 책임사항을 규정함을 목적으로 합니다
 ② 이용자가 되고자 하는 자가 HappyPawPet가 정한 소정의 절차를 거쳐서 "회원가입" 단추를 누르면 본 약관에 동의하는 것으로 간주합니다. 본 약관에 정하는 이외의 이용자와 HappyPawPet에 권리, 의무 및 책임사항에 관해서는 전기통신사업법 기타 대한민국의 관련 법령과 상관습에 의합니다.
 
@@ -145,8 +145,8 @@ HappyPawPet는 관련법령이 정하는 바에 따라서 이용자 등록정보
 ② HappyPawPet가 본 약관을 개정할 경우에는 적용일자 및 개정사유를 명시하여 현행약관과 함께 초기화면에 그 적용일자 7일 이전부터 적용일자 전일까지 공지합니다.
 ③ HappyPawPet가 본 약관을 개정할 경우에는 그 개정약관은 개정된 내용이 관계 법령에 위배되지 않는 한 개정 이전에 회원으로 가입한 이용자에게도 적용됩니다.
 ④ 변경된 약관에 이의가 있는 이용자는 제6조 제1항에 따라 탈퇴할 수 있습니다.</textarea>
-                            <div id="terms_button">
-                                <button id="terms_mbtn" onclick="close_terms_button()">닫기</button>
+                            <div id="u_button">
+                                <button id="uBtn" onclick="close_terms_button()">닫기</button>
                             </div>
                         </div>
                     </div>

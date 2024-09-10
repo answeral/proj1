@@ -1,0 +1,67 @@
+@charset "UTF-8";
+
+#admin{height: 100%;}
+section{position: relative; top:100px; left:0; min-height:500px;;
+	background-color: #FAF7F0; flex:1; display: flex}
+
+button[type="button"]{ cursor: pointer;}
+
+
+/*-----------------------------------------------------------------------------*/
+
+.main{position: relative;
+	width: 80%;
+	margin-left: 310px;
+	padding-top: 40px;
+	padding-left: 40px;
+	box-sizing: border-box;}
+
+.main > h2{ font-size: 28px; color: #342F2F; text-align: left;
+	font-family: Roboto;
+	font-optical-sizing: auto;
+	font-style: normal; }
+.main > h2 > span { font-weight: 550; border-bottom: 1px solid rgb(209, 209, 209);}
+
+.servTime{
+	margin-top: 30px; margin-bottom: 30px;
+}
+
+.servTime > h2{
+	width: 100%;
+	font-size: 20px;
+	font-weight: 600;
+	box-sizing: border-box;
+	margin : 15px auto 0 auto;
+	padding: 0 0 0 10px;
+}
+.servTime > span {
+	width: 100%; margin : 0 auto; padding: 0 0 10px 10px;
+	font-size: 23px; color: #0C0F5A;
+	font-weight: 600;
+}
+
+.analytics{
+	width: 100%; display: inline-block;
+	margin: 20px 0 20px 0; 
+}
+
+.analytics > h2{ 
+	font-size: 28px; color: #342F2F; text-align: left;
+	font-family: Roboto;
+	font-optical-sizing: auto;
+	font-style: normal;}
+	
+.analytics > h2 > span { font-weight: 550; border-bottom: 1px solid rgb(209, 209, 209);}
+
+#data-container{
+	width: 100%;
+}
+
+.contain1, .contain2{
+	display: flex;
+	margin-top: 10px
+}
+
+#myChart, #myChart2, #myChart3, #myChart4{
+	width: 50% !important; height: 350px !important;
+}
