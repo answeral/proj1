@@ -25,20 +25,152 @@
 # 📁 Folder 구조
 
 ```jsx
-📁 src. 📁 main. 📁 java
-|                   |_ 📁 com. 📁 java
-|                   |                |_ 📁 config
-|                   |                |_ 📁 controller
-|                   |                |_ 📁 dao
-|                   |                |_ 📁 dto
-|                   |                |_ 📁 service
-|                   |                |_ 📁 utils
-|                   |                |_ HappyPawPetApplication.java
-|                   |                  
-|                   |_ 📁 resources
-|                   |_ 📁 webapp
-|
+📁 src
+|   |_ 📁 main
+|        |_ 📁 java
+|        |    |_ 📁 com
+|        |         |_ 📁 java
+|        |              |_ 📁 config
+|        |              |    |_ Application_config.java
+|        |              |    |_ File_config.java
+|        |              |_ 📁 controller
+|        |              |    |_ AbandonedController.java
+|        |              |    |_ AdController.java
+|        |              |    |_ AdoptController.java
+|        |              |    |_ BController.java
+|        |              |    |_ CheckToolController.java
+|        |              |    |_ EController.java
+|        |              |    |_ Fontroller.java
+|        |              |    |_ Montroller.java
+|        |              |    |_ PController.java
+|        |              |_ 📁 dao
+|        |              |    |_ AbandonedDao.java
+|        |              |    |_ AdoptDao.java
+|        |              |    |_ AdoptLikelistDao.java
+|        |              |    |_ Answer.java
+|        |              |    |_ BcmAgeDao.java
+|        |              |    |_ BcmDao.java
+|        |              |    |_ BoardCommentDao.java
+|        |              |    |_ BoardDao.java
+|        |              |    |_ ByememDao.java
+|        |              |    |_ CommentDao.java
+|        |              |    |_ EmergencyDao.java
+|        |              |    |_ HappyAdoptionlikeDao.java
+|        |              |    |_ MemberDao.java
+|        |              |    |_ PetDao.java
+|        |              |    |_ PetDiagnosisDao.java
+|        |              |    |_ ProductDao.java
+|        |              |    |_ QnaAnswerDao.java
+|        |              |    |_ QnaDao.java
+|        |              |_ 📁 dto
+|        |              |    |_ 📁 board
+|        |              |    |_ 📁 diagnosis
+|        |              |    |_ 📁 qna
+|        |              |    |_ AbandonedDto.java
+|        |              |    |_ AdoptDto.java
+|        |              |    |_ AdoptLikelist.java
+|        |              |    |_ AnalyticsDto.java
+|        |              |    |_ ByememDto.java
+|        |              |    |_ DataDto.java
+|        |              |    |_ EmergencyContentDto.java
+|        |              |    |_ EmergencyListDto.java
+|        |              |    |_ EmergencyStepDto.java
+|        |              |    |_ HappyAdoptionlikeDto.java
+|        |              |    |_ KakaoDto.java
+|        |              |    |_ LogoutDto.java
+|        |              |    |_ MemberDto.java
+|        |              |    |_ OAuthTokenDto.java
+|        |              |    |_ PetDto.java
+|        |              |    |_ ProductDto.java
+|        |              |_ 📁 service
+|        |              |    |_ 📁 adopt
+|        |              |    |_ 📁 board
+|        |              |    |_ 📁 diagnosis
+|        |              |    |_ 📁 qna
+|        |              |    |_ AbandonedService.java
+|        |              |    |_ AbandonedServiceImpl.java
+|        |              |    |_ AnalyticsService.java
+|        |              |    |_ AnalyticsServiceImpl.java
+|        |              |    |_ ByememService.java
+|        |              |    |_ ByememServiceImpl.java
+|        |              |    |_ EmailService.java
+|        |              |    |_ EmailServiceImpl.java
+|        |              |    |_ EmergencyService.java
+|        |              |    |_ EmergencyServiceImpl.java
+|        |              |    |_ FlaskClient.java
+|        |              |    |_ HappyAdoptionlikeService.java
+|        |              |    |_ HappyAdoptionlikeServiceImpl.java
+|        |              |    |_ MemberService.java
+|        |              |    |_ MemberServiceImpl.java
+|        |              |    |_ PetService.java
+|        |              |    |_ PetServiceImpl.java
+|        |              |    |_ ProductService.java
+|        |              |    |_ ProductServiceImpl.java
+|        |              |_ 📁 utils
+|        |              |    |_ PaginationUtils.java
+|        |              |_ HappyPawPetApplication.java
+|        |_ 📁 resources
+|        |    |_ 📁 mapper
+|        |    |    |_ 📁 adoption
+|        |    |    |    |_ adopLikelistMapper.xml
+|        |    |    |    |_ adoptionMapper.xml
+|        |    |    |_ 📁 board
+|        |    |    |    |_ answerMapping.xml
+|        |    |    |    |_ bcmAgeMapping.xml
+|        |    |    |    |_ bcmMapping.xml
+|        |    |    |    |_ boardCommentMapping.xml
+|        |    |    |    |_ boardMapping.xml
+|        |    |    |    |_ commentMapping.xml
+|        |    |    |    |_ qnaAnswerMapping.xml
+|        |    |    |    |_ qnaMapping.xml
+|        |    |    |_ 📁 byemem
+|        |    |    |    |_ byememMapping.xml
+|        |    |    |_ 📁 diagnosis
+|        |    |    |    |_ petDiagnosisMapping.xml
+|        |    |    |_ 📁 emergency
+|        |    |    |    |_ emergencyMapper.xml
+|        |    |    |_ 📁 member
+|        |    |    |    |_ memberMapping.xml
+|        |    |    |_ 📁 mypage
+|        |    |    |    |_ HappyAdoptionlikeMapper.xml
+|        |    |    |_ 📁 pet
+|        |    |    |    |_ petMapping.xml
+|        |    |    |_ 📁 product
+|        |    |         |_ productMapping.xml
+|        |    |_ 📁 static
+|        |    |    |_ 📁 css
+|        |    |    |    |_ 📁 admin
+|        |    |    |    |_ 📁 adoption
+|        |    |    |    |_ 📁 board
+|        |    |    |    |_ 📁 diagnosis
+|        |    |    |    |_ 📁 emergency
+|        |    |    |    |_ 📁 login
+|        |    |    |    |_ 📁 mypage
+|        |    |    |    |_ footer.css
+|        |    |    |    |_ index.css
+|        |    |    |    |_ top.css
+|        |_ 📁 fonts
+|        |_ 📁 image
+|        |_ 📁 js
+|        |_ 📁 templates
+|        |_ application.properties
+|        |_ application-private.properties
+|   |_ 📁 webapp
+|        |_ 📁 WEB-INF
+|             |_ 📁 views
+|                  |_ 📁 admin
+|                  |_ 📁 adoption
+|                  |_ 📁 board
+|                  |_ 📁 conditions
+|                  |_ 📁 diagnosis
+|                  |_ 📁 emergency
+|                  |_ 📁 footer
+|                  |_ 📁 login
+|                  |_ 📁 mypage
+|                  |_ 📁 top
+|                  |_ index.jsp
 📁 test
+
 ```
 
 
